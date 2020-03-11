@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.7"
 
 services:
   Auth-db:
@@ -11,17 +11,25 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=admin
     volumes:
-      - ./Fishare-databases/init-auth-mongodb.js:/docker-entrypoint-initdb.d/init-auth-mongodb.js:ro
-      - ./docker-data:/data/db
-      - ./db-init/:/docker-entrypoint-initdb.d
+      - MongoDB-Auth:/data/db
+      - MongoDB-Auth:/data/configdb
     ports:
-      - "27017-27019:27017-27019"
+      - 27017:27017
 
   Auth-node:
-    image: dcornelissen/fishare-auth-nest:latest
+    image: dcornelissen/fishare-auth-nest-i
     container_name: fishare-auth-nest
     build:
       context: ./Fishare-microservices/auth-service
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
+    volumes:
+      - .:/auth-service
+    environment:
+      FLASK_ENV: development
     ports:
       - "3000:3000"
+
+volumes: 
+  MongoDB-Auth:
+    external: false
+    name: "authservice-database"

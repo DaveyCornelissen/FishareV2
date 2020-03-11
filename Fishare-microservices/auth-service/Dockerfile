@@ -1,14 +1,14 @@
 FROM node:10
 
-WORKDIR /Fishare-AuthService
+WORKDIR /app
 
-ADD package.json /Fishare-AuthService/package.json
+ADD package.json /app/package.json
 
 RUN npm config set registry http://registry.npmjs.org
 
 RUN npm install
 
-ADD . /Fishare-AuthService
+ADD . /app
 
 EXPOSE 3000
 
