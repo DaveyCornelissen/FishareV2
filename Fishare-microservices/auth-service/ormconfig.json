@@ -1,8 +1,10 @@
 {
     "type": "mongodb",
     "host": "localhost",
+    "username": "admin",
+    "password": "admin",
     "port": 27017,
-    "database": "fishare-auth",
+    "database": "authentication",
     "entities": ["dist/**/*.entity{.ts,.js}"],
     "synchronize": true
   }
