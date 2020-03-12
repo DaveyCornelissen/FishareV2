@@ -17,7 +17,7 @@ services:
       - 27017:27017
 
   Auth-node:
-    image: fishare-auth-nest-i
+    image: dcornlissen/fishare-auth-nest-i
     container_name: fishare-auth-nest
     build:
       context: ./Fishare-microservices/auth-service
