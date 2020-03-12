@@ -19,9 +19,9 @@ services:
   Auth-node:
     image: dcornelissen/fishare-auth-nest-i
     container_name: fishare-auth-nest
-    build:
-      context: ./Fishare-microservices/auth-service
-      dockerfile: Dockerfile
+    # build:
+    #   context: ./Fishare-microservices/auth-service
+    #   dockerfile: Dockerfile
     volumes:
       - .:/auth-service
     environment:
