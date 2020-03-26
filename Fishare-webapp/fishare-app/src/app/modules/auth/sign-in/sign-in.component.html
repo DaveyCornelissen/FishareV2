@@ -1,0 +1,29 @@
+<div class="form-wrapper" fxLayoutAlign="center" fxLayout="row" >
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" fxFlex="80" fxFlex.gt-md="40" fxFlex.gt-sm="50">
+      <mat-card class="signIn-card">
+        <mat-card-header>
+          <mat-card-title color="primary">SignIn</mat-card-title>
+        </mat-card-header>
+  
+        <mat-card-content fxLayout="column" fxLayoutGap="10px">
+          <mat-form-field>
+            <input matInput placeholder="Email" type="email" formControlName="email">
+            <mat-error class="email-required" *ngIf="f.email.errors?.required">Email is required</mat-error>
+            <mat-error class="email-unvalid" *ngIf="f.email.errors?.email">Email must be a valid email address</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input matInput placeholder="Password" type="password" formControlName="password">
+            <mat-error class="password-required" *ngIf="f.password.errors?.required">Password is required</mat-error>
+            <mat-error class="password-length" *ngIf="f.password.errors?.minLength">Password must be at least 8 characters</mat-error>
+          </mat-form-field>
+  
+          <p class="mat-small">Click here to <a routerLink="/signUp">SignUp!</a></p>
+        </mat-card-content>
+  
+        <mat-card-actions fxLayoutAlign="center">
+          <button mat-flat-button color="primary">SignIn</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
