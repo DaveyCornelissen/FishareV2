@@ -19,7 +19,7 @@ $Fishare-webapp-accent: mat-palette($mat-blue, A400, A100, A700);
 $Fishare-webapp-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$Fishare-webapp-theme: mat-light-theme($Fishare-webapp-primary, $Fishare-webapp-accent, $Fishare-webapp-warn);
+$Fishare-webapp-theme: mat-dark-theme($Fishare-webapp-primary, $Fishare-webapp-accent, $Fishare-webapp-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component

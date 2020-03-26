@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ContentLayoutComponent } from './layouts/content-layout/content-layout.component';
 
 const routes: Routes = [
-
   {
     path: 'auth',
-    component: AuthLayoutComponent,
+    component: ContentLayoutComponent,
     loadChildren: () =>
       import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
