@@ -33,7 +33,6 @@ import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   exports: [
-    NoopAnimationsModule,
     LayoutModule,
     MatButtonModule,
     MatIconModule,

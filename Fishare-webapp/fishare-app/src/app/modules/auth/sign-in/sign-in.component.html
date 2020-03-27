@@ -1,4 +1,5 @@
 <div class="form-wrapper" fxLayoutAlign="center" fxLayout="row" >
+    
     <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" fxFlex="80" fxFlex.gt-md="40" fxFlex.gt-sm="50">
       <mat-card class="signIn-card">
         <mat-card-header>
@@ -18,11 +19,11 @@
             <mat-error class="password-length" *ngIf="f.password.errors?.minLength">Password must be at least 8 characters</mat-error>
           </mat-form-field>
   
-          <p class="mat-small">Click here to <a routerLink="/signUp">SignUp!</a></p>
+          <p class="mat-small">Click here to <a mat-raised-button color='accent' routerLink="/auth/signUp">SignUp</a></p>
         </mat-card-content>
   
         <mat-card-actions fxLayoutAlign="center">
-          <button mat-flat-button color="primary">SignIn</button>
+          <button mat-raised-button color="primary">SignIn</button>
         </mat-card-actions>
       </mat-card>
     </form>
