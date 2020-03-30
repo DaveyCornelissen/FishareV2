@@ -1,0 +1,56 @@
+<div fxLayoutAlign="center" fxLayout="row">
+    <form class="form-wrapper" [formGroup]="signUpForm" (ngSubmit)="onSubmit()" fxFlex=80 fxFlex.gt-md=40>
+        <mat-card fxLayoutAlign="center" fxLayout="column">
+            <mat-card-header>
+                <mat-card-title>SignUp</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content class="card-content" fxLayout="column" fxLayoutGap="10px">
+                <mat-form-field>
+                    <input matInput placeholder="Email" type="email" formControlName="email" />
+                    <mat-error *ngIf="f.email.errors?.required">Email is required</mat-error>
+                    <mat-error *ngIf="f.email.errors?.email">Email must be a valid email address</mat-error>
+                </mat-form-field>
+
+                <div fxLayout.gt-sm="row" fxLayout.gt-xs="row" fxLayout="column" fxLayoutGap="10px">
+                    <mat-form-field fxFlex fxFlex.gt-sm fxFlex.gt-xs>
+                        <input matInput placeholder="Username" formControlName="userName" />
+                        <mat-error *ngIf="f.userName.errors?.required">UserName is required</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <mat-form-field>
+                    <input matInput placeholder="address" formControlName="address">
+                    <mat-error *ngIf="f.address.errors?.required">address is required</mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field>
+                    <input matInput placeholder="country" formControlName="country">
+                    <mat-error *ngIf="f.country.errors?.required">country is required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Password" type="password" formControlName="password" />
+                    <mat-error *ngIf="f.password.errors?.required">Password is required</mat-error>
+                    <mat-error *ngIf="f.password.errors?.minlength">Password must be at least 8 characters</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Confirm password" type="password" formControlName="confirmPassword" />
+                    <mat-error *ngIf="f.confirmPassword.errors?.required">Confirm Password is required</mat-error>
+                    <mat-error *ngIf="f.confirmPassword.errors?.minlength">Confirm Password must be at least 8
+                        characters</mat-error>
+                    <mat-error *ngIf="f.confirmPassword.errors?.match">Comfirm password does not match with password!
+                    </mat-error>
+                </mat-form-field>
+
+                <p class="mat-small">Click here to <a mat-flat-button color="accent" routerLink="/auth/signIn">SignIn</a></p>
+            </mat-card-content>
+
+            <mat-card-actions fxLayoutAlign="center">
+                <button mat-flat-button color="primary">SignUp</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>
