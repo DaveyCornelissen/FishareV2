@@ -12,7 +12,7 @@ import { JwtStrategy } from '../core/interceptors/jwt.strategy';
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
       secret: jwtConstants.secret,
-      signOptions: { expiresIn: '60s' },
+      signOptions: { expiresIn: '3d' },
     })
   ],
   controllers: [AuthController],
