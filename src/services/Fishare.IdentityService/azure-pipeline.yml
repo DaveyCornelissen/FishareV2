@@ -1,7 +1,7 @@
 trigger:
     paths:
       include:
-        - src/Identityservice/*
+        - services/Fishare-IdentityService/*
     branches:
       include:
         - master
@@ -14,7 +14,7 @@ variables:
   dockerRegistryServiceConnection: 'dcornelissen DockerHub'
   imageRepository: 'dcornelissen/Fishare-Identityservice'
   tag: '$(Build.BuildId)'
-  solutionPath: 'src/Identityservice'
+  solutionPath: 'services/Fishare-IdentityService'
   projectPath: '$(solutionPath)'
 
   # Agent VM image name
