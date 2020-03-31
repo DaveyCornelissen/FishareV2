@@ -3,21 +3,26 @@ import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AllExceptionFilter } from './core/filters/allExceptionFilter';
 import { Transport, MicroserviceOptions } from '@nestjs/microservices';
+import { AppConfigService } from './core/config/app/config.service';
 
 
 async function bootstrap() {
 
+  
   const app = await NestFactory.createMicroservice(
     AppModule,
     {
       transport: Transport.TCP,
       options: {
         host: '',
-        port: 9090
+        port: Number(process.env.APP_PORT)
       }
     }
   );
-  await app.listen(()=> console.log('Authservice is listening...'));
+
+
+  
+  await app.listen(()=> console.log("app is now listening...."));
   app.useGlobalFilters(new AllExceptionFilter());
 
 
