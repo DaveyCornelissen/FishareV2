@@ -20,7 +20,7 @@ services:
     image: dcornlissen/fishare-auth-nest-i
     container_name: fishare-auth-nest
     build:
-      context: ./Fishare-microservices/auth-service
+      context: ./Fishare-microservices/Fishare-Identityservice
       dockerfile: Dockerfile
     volumes:
       - .:/auth-service
@@ -32,4 +32,4 @@ services:
 volumes: 
   MongoDB-Auth:
     external: false
-    name: "authservice-database"
+    name: "Identityservice-database"
