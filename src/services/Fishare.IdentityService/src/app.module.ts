@@ -5,10 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config'
 
 @Module({
   imports: [
-    AuthModule,
-    ConfigModule.forRoot({
-      envFilePath: '.dev.env',
-    }),    
+    AuthModule,   
     // MongooseModule.forRoot(`mongodb://${process.env.DATABASE_CONTAINER}:${process.env.DATABASE_PORT}/${process.env.DATABASE_NAME}?authSource=admin`, {
     //   user: process.env.DATABASE_USERNAME,
     //   pass: process.env.DATABASE_PASSWORD
