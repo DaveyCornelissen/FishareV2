@@ -3,7 +3,7 @@ version: "3.7"
 services:
   Auth-db:
     image: mongo
-    container_name: fishare-auth-db
+    container_name: fishare-identity-db
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
@@ -17,13 +17,13 @@ services:
       - 27017:27017
 
   Auth-node:
-    image: dcornlissen/fishare-auth-nest-i
-    container_name: fishare-auth-nest
+    image: dcornlissen/Fishare-Identityservice
+    container_name: Fishare-IdentityContainer
     build:
-      context: ./Fishare-microservices/Fishare-Identityservice
+      context: ./src/Fishare-Identityservice
       dockerfile: Dockerfile
     volumes:
-      - .:/auth-service
+      - .:/Fishare-Identityservice
     environment:
       FLASK_ENV: development
     ports:

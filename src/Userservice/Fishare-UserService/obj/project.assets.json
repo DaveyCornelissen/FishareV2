@@ -2686,24 +2686,24 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Fishare-User.Data.Model/1.0.0": {
+      "Fishare.Userservice.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "compile": {
-          "bin/placeholder/Fishare-User.Data.Model.dll": {}
+          "bin/placeholder/Fishare.Userservice.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Fishare-User.Data.Model.dll": {}
+          "bin/placeholder/Fishare.Userservice.Core.dll": {}
         }
       },
-      "Fishare-User.Service/1.0.0": {
+      "Fishare.Userservice.Model/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "compile": {
-          "bin/placeholder/Fishare-User.Service.dll": {}
+          "bin/placeholder/Fishare.Userservice.Model.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Fishare-User.Service.dll": {}
+          "bin/placeholder/Fishare.Userservice.Model.dll": {}
         }
       }
     }
@@ -8660,21 +8660,21 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "Fishare-User.Data.Model/1.0.0": {
+    "Fishare.Userservice.Core/1.0.0": {
       "type": "project",
-      "path": "../Fishare-User.Data.Model/Fishare-User.Data.Model.csproj",
-      "msbuildProject": "../Fishare-User.Data.Model/Fishare-User.Data.Model.csproj"
+      "path": "../Fishare-User.Service/Fishare.Userservice.Core.csproj",
+      "msbuildProject": "../Fishare-User.Service/Fishare.Userservice.Core.csproj"
     },
-    "Fishare-User.Service/1.0.0": {
+    "Fishare.Userservice.Model/1.0.0": {
       "type": "project",
-      "path": "../Fishare-User.Service/Fishare-User.Service.csproj",
-      "msbuildProject": "../Fishare-User.Service/Fishare-User.Service.csproj"
+      "path": "../Fishare-User.Data.Model/Fishare.Userservice.Model.csproj",
+      "msbuildProject": "../Fishare-User.Data.Model/Fishare.Userservice.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Fishare-User.Data.Model >= 1.0.0",
-      "Fishare-User.Service >= 1.0.0",
+      "Fishare.Userservice.Core >= 1.0.0",
+      "Fishare.Userservice.Model >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.1",
       "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.1",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.1",
@@ -8688,11 +8688,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\Fishare-microservices\\Fishare-UserService\\Fishare-UserService\\Fishare-User.API.csproj",
-      "projectName": "Fishare-User.API",
-      "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\Fishare-microservices\\Fishare-UserService\\Fishare-UserService\\Fishare-User.API.csproj",
+      "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-UserService\\Fishare.Userservice.csproj",
+      "projectName": "Fishare.Userservice",
+      "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-UserService\\Fishare.Userservice.csproj",
       "packagesPath": "C:\\Users\\Davey\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\Fishare-microservices\\Fishare-UserService\\Fishare-UserService\\obj\\",
+      "outputPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-UserService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Davey\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8708,11 +8708,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\Fishare-microservices\\Fishare-UserService\\Fishare-User.Data.Model\\Fishare-User.Data.Model.csproj": {
-              "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\Fishare-microservices\\Fishare-UserService\\Fishare-User.Data.Model\\Fishare-User.Data.Model.csproj"
+            "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Data.Model\\Fishare.Userservice.Model.csproj": {
+              "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Data.Model\\Fishare.Userservice.Model.csproj"
             },
-            "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\Fishare-microservices\\Fishare-UserService\\Fishare-User.Service\\Fishare-User.Service.csproj": {
-              "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\Fishare-microservices\\Fishare-UserService\\Fishare-User.Service\\Fishare-User.Service.csproj"
+            "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare.Userservice.Core.csproj": {
+              "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare.Userservice.Core.csproj"
             }
           }
         }

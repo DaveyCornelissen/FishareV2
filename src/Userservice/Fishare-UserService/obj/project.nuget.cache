@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T4+8UUWXZBIsACJcbK0Q7wUyBVGiKT8A3/da0JKpkbaSs3W2D36lmeMHTGaT1fswRDGRFujSCQaCNe1HTh+KXQ==",
+  "dgSpecHash": "weMCta4hY1ICdSMeXU2vG/N22ASW471Ifi7Jij2z801Iw71m1VCRIqQlVV2cAOlBCLxumsIvWMbECorKV2nUfQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\Fishare-microservices\\Fishare-UserService\\Fishare-UserService\\Fishare-User.API.csproj",
+  "projectFilePath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-UserService\\Fishare.Userservice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Davey\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Davey\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

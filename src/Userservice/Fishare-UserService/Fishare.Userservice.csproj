@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fishare-User.Data.Model\Fishare-User.Data.Model.csproj" />
-    <ProjectReference Include="..\Fishare-User.Service\Fishare-User.Service.csproj" />
+    <ProjectReference Include="..\Fishare-User.Data.Model\Fishare.Userservice.Model.csproj" />
+    <ProjectReference Include="..\Fishare-User.Service\Fishare.Userservice.Core.csproj" />
   </ItemGroup>
 
 

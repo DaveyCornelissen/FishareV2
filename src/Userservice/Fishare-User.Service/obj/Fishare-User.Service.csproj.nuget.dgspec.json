@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\Fishare-microservices\\Fishare-UserService\\Fishare-User.Service\\Fishare-User.Service.csproj": {}
+    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare-User.Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\Fishare-microservices\\Fishare-UserService\\Fishare-User.Service\\Fishare-User.Service.csproj": {
+    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare-User.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\Fishare-microservices\\Fishare-UserService\\Fishare-User.Service\\Fishare-User.Service.csproj",
+        "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare-User.Service.csproj",
         "projectName": "Fishare-User.Service",
-        "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\Fishare-microservices\\Fishare-UserService\\Fishare-User.Service\\Fishare-User.Service.csproj",
+        "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare-User.Service.csproj",
         "packagesPath": "C:\\Users\\Davey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\Fishare-microservices\\Fishare-UserService\\Fishare-User.Service\\obj\\",
+        "outputPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Davey\\AppData\\Roaming\\NuGet\\NuGet.Config",

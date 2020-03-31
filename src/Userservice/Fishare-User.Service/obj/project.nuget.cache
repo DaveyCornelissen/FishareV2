@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rxZuzePeuKZ7zhKjM8qV+oK0Z+oJDc6ukWSnecGd2D5s/y20DWmQpVhMfKrEz49tt/NP7IzVSwIwgVNRLN78sQ==",
+  "dgSpecHash": "ZpNu1kWhPmpSA68ZEiOofJ5rJ+fcRzty+PwYQZ54/QzRV+dOHW6SeQlCpHmwdzzwLXMMlf32zBiMy67rv0uo6w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\Fishare-microservices\\Fishare-UserService\\Fishare-User.Service\\Fishare-User.Service.csproj",
+  "projectFilePath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare.Userservice.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

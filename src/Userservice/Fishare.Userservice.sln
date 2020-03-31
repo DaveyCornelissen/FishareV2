@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fishare-User.API", "Fishare-UserService\Fishare-User.API.csproj", "{8C1CAA8E-09E4-4192-BC2E-2D271DE31489}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fishare.Userservice", "Fishare-UserService\Fishare.Userservice.csproj", "{8C1CAA8E-09E4-4192-BC2E-2D271DE31489}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fishare-User.Service", "Fishare-User.Service\Fishare-User.Service.csproj", "{46770A60-A5D3-440F-B9CC-3364D4EE38E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fishare.Userservice.Core", "Fishare-User.Service\Fishare.Userservice.Core.csproj", "{46770A60-A5D3-440F-B9CC-3364D4EE38E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fishare-User.Data.Model", "Fishare-User.Data.Model\Fishare-User.Data.Model.csproj", "{A0C040CA-5E72-4D64-95E9-DA3DF2073B55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fishare.Userservice.Model", "Fishare-User.Data.Model\Fishare.Userservice.Model.csproj", "{A0C040CA-5E72-4D64-95E9-DA3DF2073B55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
