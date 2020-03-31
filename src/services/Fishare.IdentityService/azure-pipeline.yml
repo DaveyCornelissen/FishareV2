@@ -7,7 +7,7 @@ trigger:
         - master
   
 resources:
-- type: github
+- repo: self
 
 variables:
   # Container registry service connection established during pipeline creation
