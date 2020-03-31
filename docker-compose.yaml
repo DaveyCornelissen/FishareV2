@@ -17,17 +17,17 @@ services:
       - 27017:27017
 
   Auth-node:
-    image: dcornlissen/Fishare-Identityservice
-    container_name: Fishare-IdentityContainer
+    image: fishare-identityservice-i
+    container_name: Fishare-Identityservice
     build:
-      context: ./src/Fishare-Identityservice
+      context: ./src/services/Fishare.IdentityService
       dockerfile: Dockerfile
     volumes:
       - .:/Fishare-Identityservice
     environment:
       FLASK_ENV: development
     ports:
-      - "3000:3000"
+      - "3000:6000"
 
 volumes: 
   MongoDB-Auth:

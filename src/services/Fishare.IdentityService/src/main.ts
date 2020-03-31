@@ -3,7 +3,6 @@ import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AllExceptionFilter } from './core/filters/allExceptionFilter';
 import { Transport, MicroserviceOptions } from '@nestjs/microservices';
-import { AppConfigService } from './core/config/app/config.service';
 
 
 async function bootstrap() {
