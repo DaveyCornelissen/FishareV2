@@ -25,6 +25,7 @@
     "@nestjs/config": "^0.3.0",
     "@nestjs/core": "^6.10.14",
     "@nestjs/jwt": "^6.1.2",
+    "@nestjs/microservices": "^7.0.7",
     "@nestjs/mongoose": "^6.3.1",
     "@nestjs/passport": "^6.2.0",
     "@nestjs/platform-express": "^6.10.14",

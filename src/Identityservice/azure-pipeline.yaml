@@ -1,0 +1,40 @@
+trigger:
+    paths:
+      include:
+        - src/Identityservice/*
+    branches:
+      include:
+        - master
+  
+resources:
+- repo: self
+
+variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: 'dcornelissen DockerHub'
+  imageRepository: 'dcornelissen/Fishare-Identityservice'
+  tag: '$(Build.BuildId)'
+  solutionPath: 'src/Identityservice'
+  projectPath: '$(solutionPath)'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  displayName: Build and Analyze
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: $(vmImageName)
+    steps:        
+      - task: Docker@2
+        inputs:
+          containerRegistry: '$(dockerRegistryServiceConnection)'
+          repository: '$(imageRepository)'
+          command: 'buildAndPush'
+          Dockerfile: '$(solutionPath)/Dockerfile'
+          tags: |
+            $(tag)
+            latest
