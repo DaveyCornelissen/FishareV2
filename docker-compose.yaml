@@ -2,14 +2,15 @@ version: "3.7"
 
 services:
   Auth-db:
-    image: mongo
+    image: mongo:latest
+    restart: always
     container_name: fishare-identity-db
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
-      - MONGO_INITDB_DATABASE=authentication
+      - MONGO_INITDB_DATABASE=identity
       - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin12345
     volumes:
       - MongoDB-Auth:/data/db
       - MongoDB-Auth:/data/configdb
