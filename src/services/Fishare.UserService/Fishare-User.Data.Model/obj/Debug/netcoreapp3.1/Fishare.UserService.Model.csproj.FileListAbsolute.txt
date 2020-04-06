@@ -1,0 +1,9 @@
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-User.Data.Model\bin\Debug\netcoreapp3.1\Fishare.UserService.Model.deps.json
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-User.Data.Model\bin\Debug\netcoreapp3.1\Fishare.UserService.Model.dll
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-User.Data.Model\bin\Debug\netcoreapp3.1\Fishare.UserService.Model.pdb
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-User.Data.Model\obj\Debug\netcoreapp3.1\Fishare.UserService.Model.csprojAssemblyReference.cache
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-User.Data.Model\obj\Debug\netcoreapp3.1\Fishare.UserService.Model.csproj.CoreCompileInputs.cache
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-User.Data.Model\obj\Debug\netcoreapp3.1\Fishare.UserService.Model.AssemblyInfoInputs.cache
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-User.Data.Model\obj\Debug\netcoreapp3.1\Fishare.UserService.Model.AssemblyInfo.cs
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-User.Data.Model\obj\Debug\netcoreapp3.1\Fishare.UserService.Model.dll
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-User.Data.Model\obj\Debug\netcoreapp3.1\Fishare.UserService.Model.pdb

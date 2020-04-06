@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  Auth-db:
+  Identity-db:
     image: mongo:latest
     restart: always
     container_name: fishare-identity-db
@@ -17,7 +17,7 @@ services:
     ports:
       - 27017:27017
 
-  Auth-node:
+  Identity-node:
     image: fishare-identityservice-i
     container_name: Fishare-Identityservice
     build:

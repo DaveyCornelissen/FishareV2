@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-UserService\\Fishare.Userservice.csproj": {}
+    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-UserService\\Fishare.UserService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Data.Model\\Fishare.Userservice.Model.csproj": {
+    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\Fishare.UserService.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Data.Model\\Fishare.Userservice.Model.csproj",
-        "projectName": "Fishare.Userservice.Model",
-        "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Data.Model\\Fishare.Userservice.Model.csproj",
+        "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\Fishare.UserService.Model.csproj",
+        "projectName": "Fishare.UserService.Model",
+        "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\Fishare.UserService.Model.csproj",
         "packagesPath": "C:\\Users\\Davey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Data.Model\\obj\\",
+        "outputPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Davey\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,70 +52,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare.Userservice.Core.csproj": {
+    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-UserService\\Fishare.UserService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare.Userservice.Core.csproj",
-        "projectName": "Fishare.Userservice.Core",
-        "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare.Userservice.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-UserService\\Fishare.UserService.csproj",
+        "projectName": "Fishare.UserService",
+        "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-UserService\\Fishare.UserService.csproj",
         "packagesPath": "C:\\Users\\Davey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Davey\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-UserService\\Fishare.Userservice.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-UserService\\Fishare.Userservice.csproj",
-        "projectName": "Fishare.Userservice",
-        "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-UserService\\Fishare.Userservice.csproj",
-        "packagesPath": "C:\\Users\\Davey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-UserService\\obj\\",
+        "outputPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-UserService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Davey\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -131,11 +79,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Data.Model\\Fishare.Userservice.Model.csproj": {
-                "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Data.Model\\Fishare.Userservice.Model.csproj"
+              "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\Fishare.UserService.Model.csproj": {
+                "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\Fishare.UserService.Model.csproj"
               },
-              "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare.Userservice.Core.csproj": {
-                "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare.Userservice.Core.csproj"
+              "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userserice.DAL\\Fishare.UserService.DAL.csproj": {
+                "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userserice.DAL\\Fishare.UserService.DAL.csproj"
+              },
+              "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserServices.Composition\\Fishare.UserServices.Composition.csproj": {
+                "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserServices.Composition\\Fishare.UserServices.Composition.csproj"
               }
             }
           }
@@ -151,17 +102,17 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[3.1.3, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[3.1.3, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[3.1.3, )"
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
@@ -190,7 +141,143 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userserice.DAL\\Fishare.UserService.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userserice.DAL\\Fishare.UserService.DAL.csproj",
+        "projectName": "Fishare.UserService.DAL",
+        "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userserice.DAL\\Fishare.UserService.DAL.csproj",
+        "packagesPath": "C:\\Users\\Davey\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userserice.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Davey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\Fishare.UserService.Model.csproj": {
+                "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\Fishare.UserService.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserServices.Composition\\Fishare.UserServices.Composition.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserServices.Composition\\Fishare.UserServices.Composition.csproj",
+        "projectName": "Fishare.UserServices.Composition",
+        "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserServices.Composition\\Fishare.UserServices.Composition.csproj",
+        "packagesPath": "C:\\Users\\Davey\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserServices.Composition\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Davey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userserice.DAL\\Fishare.UserService.DAL.csproj": {
+                "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userserice.DAL\\Fishare.UserService.DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

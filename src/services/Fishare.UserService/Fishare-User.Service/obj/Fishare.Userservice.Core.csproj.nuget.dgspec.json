@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare.Userservice.Core.csproj": {}
+    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Service\\Fishare.Userservice.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare.Userservice.Core.csproj": {
+    "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Service\\Fishare.Userservice.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare.Userservice.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Service\\Fishare.Userservice.Core.csproj",
         "projectName": "Fishare.Userservice.Core",
-        "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\Fishare.Userservice.Core.csproj",
+        "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Service\\Fishare.Userservice.Core.csproj",
         "packagesPath": "C:\\Users\\Davey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\Userservice\\Fishare-User.Service\\obj\\",
+        "outputPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Davey\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

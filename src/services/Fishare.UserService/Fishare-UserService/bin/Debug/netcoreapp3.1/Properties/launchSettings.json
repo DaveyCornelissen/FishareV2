@@ -9,18 +9,10 @@
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "weatherforecast",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
     "Fishare_UserService": {
       "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "api",
+      "launchBrowser": false,
+      "launchUrl": "api/user",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

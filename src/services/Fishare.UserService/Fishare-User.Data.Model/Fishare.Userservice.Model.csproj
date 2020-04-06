@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Fishare_User.Data.Model</RootNamespace>
+    <RootNamespace>Fishare.Userservice.Model</RootNamespace>
   </PropertyGroup>
 
 </Project>

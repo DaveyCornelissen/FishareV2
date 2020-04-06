@@ -5,30 +5,30 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Fishare_User.API.Data;
-using Fishare_User.Data.Model;
+using Fishare.UserService.DAL;
+using Fishare.UserService.Model;
 
-namespace Fishare_User.API.Controllers
+namespace Fishare.UserService.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/user")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class UserController : ControllerBase
     {
-        private readonly UserContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public UsersController(UserContext context)
+        public UserController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Users
+        // GET: api/User
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUser()
         {
             return await _context.User.ToListAsync();
         }
 
-        // GET: api/Users/5
+        // GET: api/User/5
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
@@ -42,13 +42,13 @@ namespace Fishare_User.API.Controllers
             return user;
         }
 
-        // PUT: api/Users/5
+        // PUT: api/User/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
-            if (id != user.Id)
+            if (id != user.ID)
             {
                 return BadRequest();
             }
@@ -74,7 +74,7 @@ namespace Fishare_User.API.Controllers
             return NoContent();
         }
 
-        // POST: api/Users
+        // POST: api/User
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
@@ -83,10 +83,10 @@ namespace Fishare_User.API.Controllers
             _context.User.Add(user);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUser", new { id = user.Id }, user);
+            return CreatedAtAction("GetUser", new { id = user.ID }, user);
         }
 
-        // DELETE: api/Users/5
+        // DELETE: api/User/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<User>> DeleteUser(int id)
         {
@@ -104,7 +104,7 @@ namespace Fishare_User.API.Controllers
 
         private bool UserExists(int id)
         {
-            return _context.User.Any(e => e.Id == id);
+            return _context.User.Any(e => e.ID == id);
         }
     }
 }
