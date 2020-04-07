@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Fishare-User.Data.Model\Fishare.UserService.Model.csproj" />
+    <ProjectReference Include="..\Fishare.Userserice.DAL\Fishare.UserService.DAL.csproj" />
   </ItemGroup>
 
 </Project>

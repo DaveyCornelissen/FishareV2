@@ -5,6 +5,7 @@ namespace Fishare.UserService.Model
 {
     public class User
     {
+        [Key]
         public int ID { get; set; }
 
         [Required]

@@ -1,4 +1,5 @@
 ﻿using Fishare.UserService.Model;
+using System.Threading.Tasks;
 
 namespace Fishare.Userservice.BLL.Interfaces
 {
@@ -6,8 +7,10 @@ namespace Fishare.Userservice.BLL.Interfaces
     {
         void Create(User user);
 
-        void Delete(User iser);
+        void Delete(int id);
 
-        User Get(int id);
+        void Update(int id, User user);
+
+        Task<User> GetAsync(int id);
     }
 }

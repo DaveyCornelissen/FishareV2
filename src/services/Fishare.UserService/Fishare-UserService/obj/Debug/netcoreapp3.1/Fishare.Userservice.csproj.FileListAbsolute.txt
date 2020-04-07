@@ -299,3 +299,5 @@ C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserS
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-UserService\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-UserService\bin\Debug\netcoreapp3.1\Fishare.UserServices.Composition.dll
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-UserService\bin\Debug\netcoreapp3.1\Fishare.UserServices.Composition.pdb
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.BLL.dll
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.BLL.pdb

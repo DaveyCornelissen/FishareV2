@@ -2686,6 +2686,20 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Fishare.UserService.BLL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Fishare.UserService.DAL": "1.0.0",
+          "Fishare.UserService.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Fishare.UserService.BLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Fishare.UserService.BLL.dll": {}
+        }
+      },
       "Fishare.UserService.DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -8682,6 +8696,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Fishare.UserService.BLL/1.0.0": {
+      "type": "project",
+      "path": "../Fishare.Userservice.BLL/Fishare.UserService.BLL.csproj",
+      "msbuildProject": "../Fishare.Userservice.BLL/Fishare.UserService.BLL.csproj"
+    },
     "Fishare.UserService.DAL/1.0.0": {
       "type": "project",
       "path": "../Fishare.Userserice.DAL/Fishare.UserService.DAL.csproj",
@@ -8700,6 +8719,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Fishare.UserService.BLL >= 1.0.0",
       "Fishare.UserService.DAL >= 1.0.0",
       "Fishare.UserService.Model >= 1.0.0",
       "Fishare.UserServices.Composition >= 1.0.0",
@@ -8741,6 +8761,9 @@
             },
             "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userserice.DAL\\Fishare.UserService.DAL.csproj": {
               "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userserice.DAL\\Fishare.UserService.DAL.csproj"
+            },
+            "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userservice.BLL\\Fishare.UserService.BLL.csproj": {
+              "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userservice.BLL\\Fishare.UserService.BLL.csproj"
             },
             "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserServices.Composition\\Fishare.UserServices.Composition.csproj": {
               "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserServices.Composition\\Fishare.UserServices.Composition.csproj"

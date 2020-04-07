@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-UserService\\Fishare.Userservice.csproj",
+  "FilePath": "c:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-UserService\\Fishare.UserService.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20518,7 +20518,7 @@
     ],
     "CSharpLanguageVersion": 800
   },
-  "RootNamespace": "Fishare_User.API",
+  "RootNamespace": "Fishare.UserService",
   "Documents": [],
   "SerializationFormat": "0.2"
 }

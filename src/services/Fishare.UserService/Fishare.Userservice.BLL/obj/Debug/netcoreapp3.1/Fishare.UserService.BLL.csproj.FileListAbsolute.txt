@@ -10,3 +10,5 @@ C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserS
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.Userservice.BLL\obj\Debug\netcoreapp3.1\Fishare.UserService.BLL.csproj.CopyComplete
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.Userservice.BLL\obj\Debug\netcoreapp3.1\Fishare.UserService.BLL.dll
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.Userservice.BLL\obj\Debug\netcoreapp3.1\Fishare.UserService.BLL.pdb
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.Userservice.BLL\bin\Debug\netcoreapp3.1\Fishare.UserService.DAL.dll
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.Userservice.BLL\bin\Debug\netcoreapp3.1\Fishare.UserService.DAL.pdb

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Fishare.UserService.DAL.Repository
 {
@@ -25,14 +26,19 @@ namespace Fishare.UserService.DAL.Repository
             Context.Set<T>().Remove(entity);
         }
 
-        public T Get(int id)
+        public async Task<T> GetAsync(int id)
         {
-            return Context.Set<T>().Find(id);
+            return await Context.Set<T>().FindAsync(id);
         }
 
         public IEnumerable<T> GetAll()
         {
             return null;
+        }
+
+        public T Get(int id)
+        {
+            return Context.Set<T>().Find(id);
         }
 
     }

@@ -29,10 +29,6 @@ namespace Fishare.UserServices.Composition
                 default:
                     break;
             }
-
-
-
-            
         }
     }
 }

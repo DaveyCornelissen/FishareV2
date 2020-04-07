@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Fishare.UserService/1.0.0": {
         "dependencies": {
+          "Fishare.UserService.BLL": "1.0.0",
           "Fishare.UserService.DAL": "1.0.0",
           "Fishare.UserService.Model": "1.0.0",
           "Fishare.UserServices.Composition": "1.0.0",
@@ -2300,6 +2301,18 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
+        }
+      },
+      "Fishare.UserService.BLL/1.0.0": {
+        "dependencies": {
+          "Fishare.UserService.DAL": "1.0.0",
+          "Fishare.UserService.Model": "1.0.0"
+        },
+        "runtime": {
+          "Fishare.UserService.BLL.dll": {}
+        },
+        "compile": {
+          "Fishare.UserService.BLL.dll": {}
         }
       },
       "Fishare.UserService.DAL/1.0.0": {
@@ -5112,6 +5125,11 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Fishare.UserService.BLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Fishare.UserService.DAL/1.0.0": {
       "type": "project",
