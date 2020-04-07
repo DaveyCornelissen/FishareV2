@@ -4951,8 +4951,8 @@
     },
     "Fishare.UserService.Model/1.0.0": {
       "type": "project",
-      "path": "../Fishare-UserService.Model/Fishare.UserService.Model.csproj",
-      "msbuildProject": "../Fishare-UserService.Model/Fishare.UserService.Model.csproj"
+      "path": "../Fishare.UserService.Model/Fishare.UserService.Model.csproj",
+      "msbuildProject": "../Fishare.UserService.Model/Fishare.UserService.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {

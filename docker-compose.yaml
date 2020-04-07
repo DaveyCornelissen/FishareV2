@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  Identity-db:
+  fishare-identitycontext-container:
     image: mongo:latest
     restart: always
     container_name: fishare-identity-db
@@ -17,20 +17,56 @@ services:
     ports:
       - 27017:27017
 
-  Identity-node:
+  fishare-identityservice-container:
     image: fishare-identityservice-i
-    container_name: Fishare-Identityservice
+    container_name: fishare-identityservice
     build:
       context: ./src/services/Fishare.IdentityService
       dockerfile: Dockerfile
     volumes:
-      - .:/Fishare-Identityservice
+      - .:/fishare-identityservice
     environment:
       FLASK_ENV: development
     ports:
       - "3000:6000"
+  
+  fishare-usercontext-container:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'user'
+      MYSQL_USER: 'user'
+      MYSQL_ROOT_PASSWORD: 'toor12345'
+    ports:
+      - '3306:3306'
+    volumes:
+      - MySQLDB-User:/var/lib/mysql
+  adminer_container:
+    image: adminer:latest
+    environment:
+      ADMINER_DEFAULT_SERVER: user
+    ports:
+      - 8080:8080
+
+  fishare-userservice-container:
+    image: fishare-userservice-i
+    container_name: fishare-userservice
+    build:
+      context: ./src/services/Fishare.UserService/Fishare.UserService
+      dockerfile: Dockerfile
+    volumes:
+      - .:/fishare-userservice
+    environment:
+        ASPNETCORE_ENVIRONMENT: Docker
+        FISHARE_USERSERVICE_DB: "server=fishare-usercontext-container;uid=root;pwd=toor12345;database=user"
+    ports:
+      - "3010:80"
+      - "3010:443"
 
 volumes: 
   MongoDB-Auth:
     external: false
     name: "Identityservice-database"
+  MySQLDB-User:
+    external: false
+    name: "Userservice-database"
