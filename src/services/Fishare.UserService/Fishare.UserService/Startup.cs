@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿
+using Fishare.UserService.DAL.Repository;
+using Fishare.UserServices.Composition;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
-using Fishare.UserService.DAL;
-using Fishare.UserService.DAL.Repository;
-using Fishare.UserServices.Composition;
 
 namespace Fishare_UserService
 {

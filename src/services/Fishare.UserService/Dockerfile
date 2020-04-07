@@ -9,10 +9,10 @@ ENV ASPNETCORE_URLS=http://*:5000
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["Fishare.UserService/Fishare.UserService.csproj", "Fishare.UserService/"]
-COPY ["Fishare.Userservice.BLL/Fishare.UserService.BLL.csproj", "Fishare.Userservice.BLL/"]
-COPY ["Fishare.Userserice.DAL/Fishare.UserService.DAL.csproj", "Fishare.Userserice.DAL/"]
+COPY ["Fishare.UserService.BLL/Fishare.UserService.BLL.csproj", "Fishare.UserService.BLL/"]
+COPY ["Fishare.UserService.DAL/Fishare.UserService.DAL.csproj", "Fishare.UserService.DAL/"]
 COPY ["Fishare.UserService.Model/Fishare.UserService.Model.csproj", "Fishare.UserService.Model/"]
-COPY ["Fishare.UserServices.Composition/Fishare.UserServices.Composition.csproj", "Fishare.UserServices.Composition/"]
+COPY ["Fishare.UserService.Composition/Fishare.UserService.Composition.csproj", "Fishare.UserService.Composition/"]
 RUN dotnet restore "Fishare.UserService/Fishare.UserService.csproj"
 COPY . .
 WORKDIR "/src/Fishare.UserService"

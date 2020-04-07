@@ -445,13 +445,13 @@ C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserS
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.BLL.dll
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.DAL.dll
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.Model.dll
-C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Fishare.UserServices.Composition.dll
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.DAL.pdb
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.BLL.pdb
-C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Fishare.UserServices.Composition.pdb
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.Model.pdb
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\Fishare.UserService.RazorTargetAssemblyInfo.cache
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\Fishare.UserService.csproj.CopyComplete
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\staticwebassets\Fishare.UserService.StaticWebAssets.Manifest.cache
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\staticwebassets\Fishare.UserService.StaticWebAssets.xml
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\Fishare.UserService.genruntimeconfig.cache
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.Composition.dll
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.Composition.pdb

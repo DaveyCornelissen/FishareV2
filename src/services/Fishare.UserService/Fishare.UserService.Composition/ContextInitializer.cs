@@ -14,6 +14,7 @@ namespace Fishare.UserServices.Composition
         public static void Init(IServiceCollection services, IConfiguration configuration)
         {
             string stage = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            string containerString = Environment.GetEnvironmentVariable("FISHARE_USERSERVICE_DB");
 
             switch (stage)
             {
