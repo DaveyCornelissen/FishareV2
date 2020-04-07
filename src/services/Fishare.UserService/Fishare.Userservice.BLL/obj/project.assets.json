@@ -4951,8 +4951,8 @@
     },
     "Fishare.UserService.Model/1.0.0": {
       "type": "project",
-      "path": "../Fishare-User.Data.Model/Fishare.UserService.Model.csproj",
-      "msbuildProject": "../Fishare-User.Data.Model/Fishare.UserService.Model.csproj"
+      "path": "../Fishare-UserService.Model/Fishare.UserService.Model.csproj",
+      "msbuildProject": "../Fishare-UserService.Model/Fishare.UserService.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4987,8 +4987,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\Fishare.UserService.Model.csproj": {
-              "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\Fishare.UserService.Model.csproj"
+            "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-UserService.Model\\Fishare.UserService.Model.csproj": {
+              "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-UserService.Model\\Fishare.UserService.Model.csproj"
             },
             "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userserice.DAL\\Fishare.UserService.DAL.csproj": {
               "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userserice.DAL\\Fishare.UserService.DAL.csproj"

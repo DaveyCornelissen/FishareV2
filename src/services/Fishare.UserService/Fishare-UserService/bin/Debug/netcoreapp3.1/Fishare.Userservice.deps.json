@@ -26,7 +26,6 @@
         "dependencies": {
           "Fishare.UserService.BLL": "1.0.0",
           "Fishare.UserService.DAL": "1.0.0",
-          "Fishare.UserService.Model": "1.0.0",
           "Fishare.UserServices.Composition": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.3",

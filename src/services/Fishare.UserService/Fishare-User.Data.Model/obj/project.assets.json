@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\Fishare.Userservice.Model.csproj",
-      "projectName": "Fishare.Userservice.Model",
-      "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\Fishare.Userservice.Model.csproj",
+      "projectUniqueName": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\Fishare.UserService.Model.csproj",
+      "projectName": "Fishare.UserService.Model",
+      "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\Fishare.UserService.Model.csproj",
       "packagesPath": "C:\\Users\\Davey\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare-User.Data.Model\\obj\\",
       "projectStyle": "PackageReference",
