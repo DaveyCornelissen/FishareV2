@@ -2,7 +2,7 @@
 
 namespace Fishare.UserService.DAL.Migrations
 {
-    public partial class createUserToDb : Migration
+    public partial class CreatedUserToDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

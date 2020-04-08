@@ -31,26 +31,14 @@ services:
       - "3000:6000"
   
   fishare-usercontext-container:
-    image: mysql:5.7
+    image: mysql:5.7.18
     container_name: fishare-usercontext
-    restart: always
     environment:
-      MYSQL_DATABASE: 'FishareUserService'
-      SA_PASSWORD: 'toor12345'
-    ports:
-      - '3306:3306'
-    expose: 
-      - 3307 
+      MYSQL_ROOT_PASSWORD: "p4ssw0r#"
+      MYSQL_DATABASE: "Userservicedb"
     volumes:
-      - MySQLDB-User:/var/lib/mysql
-
-  adminer_container:
-    image: adminer:latest
-    container_name: fishare-usercontext-pannel
-    environment:
-      ADMINER_DEFAULT_SERVER: user
-    ports:
-      - 8080:8080
+      - ./mysql-data:/var/lib/mysql
+    restart: always
 
   fishare-userservice-container:
     image: fishare-userservice-i
@@ -62,7 +50,7 @@ services:
       - .:/fishare-userservice
     environment:
         ASPNETCORE_ENVIRONMENT: Docker
-        FISHARE_USERSERVICE_DB: "Server=fishare-usercontext;Database=FishareUserService;Uid=sa;Password=toor12345"
+        # FISHARE_USERSERVICE_DB: "Server=fishare-usercontext;Database=FishareUserService;Uid=sa;Password=toor12345"
     ports:
       - "5000:5000"
 
@@ -70,6 +58,5 @@ volumes:
   MongoDB-Auth:
     external: false
     name: "Identityservice-database"
-  MySQLDB-User:
-    external: false
-    name: "Userservice-database"
+  MYSQLDB-User:
+    name: "Userservice-MYSQL"

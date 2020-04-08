@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fishare.UserService.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200406143734_createUserToDb")]
-    partial class createUserToDb
+    [Migration("20200408165737_CreatedUserToDB")]
+    partial class CreatedUserToDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
