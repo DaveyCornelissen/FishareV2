@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Fishare.UserService.DAL
@@ -11,7 +12,6 @@ namespace Fishare.UserService.DAL
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
            : base(options)
         {
-
         }
 
         public DbSet<User> User { get; set; }

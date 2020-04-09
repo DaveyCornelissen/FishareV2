@@ -31,14 +31,17 @@ services:
       - "3000:6000"
   
   fishare-usercontext-container:
-    image: mysql:5.7.18
+    image: mcr.microsoft.com/mssql/server:2019-latest
     container_name: fishare-usercontext
     environment:
-      MYSQL_ROOT_PASSWORD: "p4ssw0r#"
-      MYSQL_DATABASE: "Userservicedb"
-    volumes:
-      - ./mysql-data:/var/lib/mysql
+      ACCEPT_EULA: 'Y'
+      SA_PASSWORD: 'Toor12345'
+      MSSQL_PID: 'Developer'
     restart: always
+    volumes: 
+      - MSSQLDB-User:/var/opt/mssql
+    ports: 
+      - "1433:1433"
 
   fishare-userservice-container:
     image: fishare-userservice-i
@@ -54,9 +57,15 @@ services:
     ports:
       - "5000:5000"
 
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080   
+
 volumes: 
   MongoDB-Auth:
     external: false
     name: "Identityservice-database"
-  MYSQLDB-User:
-    name: "Userservice-MYSQL"
+  MSSQLDB-User:
+    name: "Userservice-MSSQL"

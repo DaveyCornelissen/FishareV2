@@ -4,8 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Fishare.UserServices.Composition
 {
@@ -20,7 +18,7 @@ namespace Fishare.UserServices.Composition
             {
                 case "Development":
                     services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer(configuration.GetConnectionString("FISHARE_USERSERVICE_DB")));
+                    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
                     break;
                 case "DockerDEV":
                     services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("FISHARE_USERSERVICE_DB")));

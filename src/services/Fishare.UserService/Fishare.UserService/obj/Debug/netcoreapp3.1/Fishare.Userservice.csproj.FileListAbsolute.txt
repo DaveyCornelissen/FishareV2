@@ -302,8 +302,6 @@ C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserS
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.BLL.dll
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare-UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.BLL.pdb
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\Fishare.UserService.csprojAssemblyReference.cache
-C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\Fishare.UserService.csproj.CoreCompileInputs.cache
-C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\Fishare.UserService.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\Fishare.UserService.AssemblyInfoInputs.cache
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\Fishare.UserService.AssemblyInfo.cs
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\Fishare.UserService.dll
@@ -455,3 +453,6 @@ C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserS
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\Fishare.UserService.genruntimeconfig.cache
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.Composition.dll
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.Composition.pdb
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\appsettings.Production.json
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\Fishare.UserService.csproj.CoreCompileInputs.cache
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\Fishare.UserService.MvcApplicationPartsAssemblyInfo.cache
