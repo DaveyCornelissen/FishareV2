@@ -1,6 +1,6 @@
-class Identity {
-    id: Number;
+export class IdentityDto {
     token: String;
     email: String;
     password: String;
+    confirmPassword: String
 }

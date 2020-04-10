@@ -1,10 +1,11 @@
-import { Controller, Post, UseGuards, Request } from '@nestjs/common';
+import { Controller, Post, UseGuards, Request, Body } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { IdentityService } from './identity.service';
 import { LocalAuthGuard } from 'src/core/guards/local-auth-guard';
 import { JwtAuthGuard } from 'src/core/guards/jwt-auth-guard';
+import { IdentityDto } from 'src/shared/dto/Identity.dto';
 
-@Controller('auth')
+@Controller('identity')
 export class IdentityController {
     constructor(private IdentityService: IdentityService) {}
 
@@ -20,8 +21,8 @@ export class IdentityController {
         return 'Signing Off...'
     }
 
-    @Post('SignUp')
-    signUp(@Request() req) {
-        return this.IdentityService.Create(req.body)
+    @Post('signUp')
+    signUp(@Body('data') body: IdentityDto) {
+        return this.IdentityService.Create(body)
     }
 }

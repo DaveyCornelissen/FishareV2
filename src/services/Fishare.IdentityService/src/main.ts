@@ -8,7 +8,7 @@ import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
 
-  const app = await NestFactory.createMicroservice(
+  const app = await NestFactory.create(
     AppModule
   );
 
@@ -16,18 +16,18 @@ async function bootstrap() {
   const port = configService.get<string>('app.port');
   const name = configService.get<string>('app.name');
 
-  await app.listen(()=> console.log(`${name} is now listening on port: ${port}`));
+  await app.listen(port);
   app.useGlobalFilters(new AllExceptionFilter());
 
-
+  console.log(`${name} is now listening on port: ${port}`)
   const options = new DocumentBuilder()
     .setTitle('Auth-service')
     .setDescription('The authenication service for the fishare api')
     .setVersion('0.1')
     .build();
 
-  // const document = SwaggerModule.createDocument(app, options);
-  // SwaggerModule.setup('api', app, document);
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('api', app, document);
   
 }
 bootstrap();
