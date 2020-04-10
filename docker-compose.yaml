@@ -27,6 +27,7 @@ services:
       - .:/fishare-identityservice
     environment:
       FLASK_ENV: development
+      FISHARE_IDENTITYSERVICE_DB: "mongodb://admin:admin12345@fishare-identitycontext:27017/identity?authSource=identity"
     ports:
       - "3000:6000"
   
@@ -53,15 +54,9 @@ services:
       - .:/fishare-userservice
     environment:
         ASPNETCORE_ENVIRONMENT: Docker
-        # FISHARE_USERSERVICE_DB: "Server=fishare-usercontext;Database=FishareUserService;Uid=sa;Password=toor12345"
+        FISHARE_USERSERVICE_DB: "Server=fishare-usercontext;Database=FUSDB;User Id=SA;Password=Toor12345;"
     ports:
       - "5000:5000"
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080   
 
 volumes: 
   MongoDB-Auth:

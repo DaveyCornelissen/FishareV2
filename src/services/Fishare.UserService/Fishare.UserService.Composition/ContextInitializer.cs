@@ -20,8 +20,8 @@ namespace Fishare.UserServices.Composition
                     services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
                     break;
-                case "DockerDEV":
-                    services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("FISHARE_USERSERVICE_DB")));
+                case "Docker":
+                    services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(containerString));
                     break;
                 case "Production":
                     services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(containerString));

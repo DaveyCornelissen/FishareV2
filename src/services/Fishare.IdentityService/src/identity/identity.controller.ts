@@ -1,17 +1,17 @@
 import { Controller, Post, UseGuards, Request } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { AuthService } from './auth.service';
+import { IdentityService } from './identity.service';
 import { LocalAuthGuard } from 'src/core/guards/local-auth-guard';
 import { JwtAuthGuard } from 'src/core/guards/jwt-auth-guard';
 
 @Controller('auth')
-export class AuthController {
-    constructor(private AuthService: AuthService) {}
+export class IdentityController {
+    constructor(private IdentityService: IdentityService) {}
 
     @UseGuards(LocalAuthGuard)
     @Post('signIn')
     async signIn(@Request() req) {
-        return this.AuthService.login(req.user);
+        return this.IdentityService.login(req.user);
     }
 
     @UseGuards()
@@ -21,7 +21,7 @@ export class AuthController {
     }
 
     @Post('SignUp')
-    signUp() {
-        return 'Signing up..'
+    signUp(@Request() req) {
+        return this.IdentityService.Create(req.body)
     }
 }

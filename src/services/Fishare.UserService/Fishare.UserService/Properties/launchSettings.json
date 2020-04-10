@@ -14,8 +14,7 @@
       "launchBrowser": false,
       "launchUrl": "api/user",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "FISHARE_USERSERVICE_DB": "Server=fishare-usercontext;Database=FishareUserService;User=sa;Password=toor12345"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "https://localhost:5001;http://localhost:5000"
     },
