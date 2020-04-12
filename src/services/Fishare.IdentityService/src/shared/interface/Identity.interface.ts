@@ -1,7 +1,7 @@
 import { Document } from 'mongoose';
 
 export interface Identity extends Document {
-    token: String;
+    userID: Number;
     email: String;
     password: String;
 }

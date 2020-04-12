@@ -4,6 +4,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AllExceptionFilter } from './core/filters/allExceptionFilter';
 import { Transport, MicroserviceOptions } from '@nestjs/microservices';
 import { ConfigService } from '@nestjs/config';
+import { ValidationPipe } from '@nestjs/common';
 
 
 async function bootstrap() {
@@ -18,6 +19,7 @@ async function bootstrap() {
 
   await app.listen(port);
   app.useGlobalFilters(new AllExceptionFilter());
+  app.useGlobalPipes(new ValidationPipe());
 
   console.log(`${name} is now listening on port: ${port}`)
   const options = new DocumentBuilder()

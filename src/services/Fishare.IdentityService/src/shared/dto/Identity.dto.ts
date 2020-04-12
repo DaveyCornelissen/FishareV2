@@ -1,6 +1,17 @@
+import { IsEmail, IsNotEmpty, MinLength, Contains, IsUppercase, IsString } from "class-validator";
+
 export class IdentityDto {
-    token: String;
+    
+    UserID?: Number
+    
+    @IsEmail()
     email: String;
+
+    @MinLength(8)
+    @IsString()
     password: String;
-    confirmPassword: String
+
+    @MinLength(8)
+    @IsString()
+    confirmPassword: String;
 }
