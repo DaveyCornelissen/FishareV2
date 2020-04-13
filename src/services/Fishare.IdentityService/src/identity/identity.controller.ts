@@ -25,7 +25,6 @@ export class IdentityController {
     @Post('registration')
     @UsePipes(new ValidationPipe({ whitelist: true }))
     signUp(@Body() body: IdentityDto) {
-        console.log(body);
         return this.IdentityService.Create(body)
     }
 }

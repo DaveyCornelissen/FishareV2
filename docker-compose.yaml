@@ -27,9 +27,10 @@ services:
       - .:/fishare-identityservice
     environment:
       FLASK_ENV: development
+      APP_PORT: '3000'
       FISHARE_IDENTITYSERVICE_DB: "mongodb://admin:admin12345@fishare-identitycontext:27017/identity?authSource=identity"
     ports:
-      - "3000:6000"
+      - "3000:${APP_PORT}"
   
   fishare-usercontext-container:
     image: mcr.microsoft.com/mssql/server:2019-latest

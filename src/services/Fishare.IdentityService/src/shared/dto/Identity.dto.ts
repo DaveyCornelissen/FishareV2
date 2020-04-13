@@ -5,13 +5,13 @@ export class IdentityDto {
     UserID?: Number
     
     @IsEmail()
-    email: String;
+    email: string;
 
     @MinLength(8)
     @IsString()
-    password: String;
+    password: string;
 
     @MinLength(8)
     @IsString()
-    confirmPassword: String;
+    confirmPassword: string;
 }

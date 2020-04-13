@@ -17,7 +17,7 @@ async function bootstrap() {
   const port = configService.get<string>('app.port');
   const name = configService.get<string>('app.name');
 
-  await app.listen(port);
+
   app.useGlobalFilters(new AllExceptionFilter());
   app.useGlobalPipes(new ValidationPipe());
 
@@ -30,6 +30,6 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
-  
+  await app.listen(port);
 }
 bootstrap();

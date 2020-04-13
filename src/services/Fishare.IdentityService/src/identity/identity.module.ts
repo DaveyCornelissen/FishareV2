@@ -8,6 +8,7 @@ import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from '../core/interceptors/jwt.strategy';
 import { MongooseModule } from '@nestjs/mongoose';
 import { IdentitySchema } from './identity.schema';
+import { PasswordService } from 'src/core/services/password/password.service';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { IdentitySchema } from './identity.schema';
     MongooseModule.forFeature([{ name: 'Identity', schema: IdentitySchema }])
   ],
   controllers: [IdentityController],
-  providers: [IdentityService, LocalStrategy, JwtStrategy],
+  providers: [IdentityService, LocalStrategy, JwtStrategy, PasswordService],
   exports: [IdentityModule]
 })
 export class IdentityModule { }
