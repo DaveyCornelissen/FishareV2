@@ -1,7 +1,7 @@
 trigger:
     paths:
       include:
-        - services/Fishare-IdentityService/*
+        - src/services/Fishare.IdentityService/*
     branches:
       include:
         - master
@@ -12,7 +12,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'dcornelissen DockerHub'
-  imageRepository: 'dcornelissen/Fishare-Identityservice'
+  imageRepository: 'dcornelissen/Fishare.Identityservice'
   tag: '$(Build.BuildId)'
   solutionPath: 'src/services/Fishare.IdentityService'
   projectPath: '$(solutionPath)'
