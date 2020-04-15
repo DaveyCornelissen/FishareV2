@@ -14,7 +14,7 @@ variables:
   dockerRegistryServiceConnection: 'dcornelissen DockerHub'
   imageRepository: 'dcornelissen/Fishare-Identityservice'
   tag: '$(Build.BuildId)'
-  solutionPath: 'services/Fishare-IdentityService'
+  solutionPath: 'src/services/Fishare.IdentityService'
   projectPath: '$(solutionPath)'
 
   # Agent VM image name

@@ -12,7 +12,7 @@ variables:
   dockerRegistryServiceConnection: 'dcornelissen DockerHub'
   imageRepository: 'dcornelissen/Fishare-Userservice'
   tag: '$(Build.BuildId)'
-  solutionPath: 'services/Fishare-UserService'
+  solutionPath: 'src/services/Fishare.UserService'
   projectPath: '$(solutionPath)'
 
 steps:
