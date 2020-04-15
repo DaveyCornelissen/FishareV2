@@ -1,19 +1,16 @@
-import { Controller, Post, UseGuards, Request, Body, ValidationPipe, UsePipes } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
+import { Controller, Post, Body, ValidationPipe, UsePipes } from '@nestjs/common';
 import { IdentityService } from './identity.service';
-import { LocalAuthGuard } from 'src/core/guards/local-auth-guard';
-import { JwtAuthGuard } from 'src/core/guards/jwt-auth-guard';
 import { IdentityDto } from 'src/shared/dto/identity.dto';
+import { ApprovalDto } from 'src/shared/dto/approval.dto';
 
 
 @Controller('identity')
 export class IdentityController {
     constructor(private IdentityService: IdentityService) {}
 
-    @UseGuards(LocalAuthGuard)
     @Post('approval')
-    async signIn(@Request() req) {
-        return this.IdentityService.login(req.user);
+    async signIn(@Body() req : ApprovalDto) {
+        return this.IdentityService.login(req);
     }
 
     @Post('removal')
@@ -23,7 +20,7 @@ export class IdentityController {
 
     @Post('registration')
     @UsePipes(new ValidationPipe())
-    signUp(@Body() body: IdentityDto) {
-        return this.IdentityService.Create(body)
+    signUp(@Body() req: IdentityDto) {
+        return this.IdentityService.Create(req)
     }
 }
