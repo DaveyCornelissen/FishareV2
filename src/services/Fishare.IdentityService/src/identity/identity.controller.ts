@@ -16,14 +16,13 @@ export class IdentityController {
         return this.IdentityService.login(req.user);
     }
 
-    @UseGuards()
     @Post('removal')
     signOut() {
         return 'Signing Off...'
     }
 
     @Post('registration')
-    @UsePipes(new ValidationPipe({ whitelist: true }))
+    @UsePipes(new ValidationPipe())
     signUp(@Body() body: IdentityDto) {
         return this.IdentityService.Create(body)
     }

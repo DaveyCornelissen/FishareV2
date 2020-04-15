@@ -19,17 +19,20 @@ async function bootstrap() {
 
 
   app.useGlobalFilters(new AllExceptionFilter());
+  app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
 
   console.log(`${name} is now listening on port: ${port}`)
-  const options = new DocumentBuilder()
-    .setTitle('Auth-service')
-    .setDescription('The authenication service for the fishare api')
-    .setVersion('0.1')
-    .build();
+  // const options = new DocumentBuilder()
+  //   .setTitle('Auth-service')
+  //   .setDescription('The authenication service for the fishare api')
+  //   .setVersion('0.1')
+  //   .build();
 
-  const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('api', app, document);
+  // const document = SwaggerModule.createDocument(app, options);
+  // SwaggerModule.setup('api', app, document);
+
+ 
   await app.listen(port);
 }
 bootstrap();

@@ -14,6 +14,18 @@
       ],
       "UpstreamPathTemplate": "/user/signIn",
       "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/identity/registration",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3000
+        }
+      ],
+      "UpstreamPathTemplate": "/user/signUp",
+      "UpstreamHttpMethod": [ "Post" ]
     }
   ]
 }
