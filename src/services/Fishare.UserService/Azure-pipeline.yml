@@ -8,6 +8,12 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: 'dcornelissen DockerHub'
+  imageRepository: 'dcornelissen/Fishare-Userservice'
+  tag: '$(Build.BuildId)'
+  solutionPath: 'services/Fishare-UserService'
+  projectPath: '$(solutionPath)'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -27,3 +33,14 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: Docker@2
+  displayName: Push image to DockerHub
+  inputs:
+    containerRegistry: |
+      $(dockerRegistryServiceConnection)
+    repository: $(imageRepository)
+    command: push
+    tags: |
+      $(tag)
+      latest
