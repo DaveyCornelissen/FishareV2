@@ -6,7 +6,7 @@ EXPOSE 80
 EXPOSE 443
 ENV ASPNETCORE_URLS=http://*:5000
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
 COPY ["Fishare.UserService/Fishare.UserService.csproj", "Fishare.UserService/"]
 COPY ["Fishare.UserService.BLL/Fishare.UserService.BLL.csproj", "Fishare.UserService.BLL/"]
