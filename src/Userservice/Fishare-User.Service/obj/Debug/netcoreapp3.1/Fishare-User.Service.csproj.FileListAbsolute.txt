@@ -1,9 +1,0 @@
-C:\Users\Davey\Documents\Software projecten\FishareV2\Fishare-microservices\Fishare-UserService\Fishare-User.Service\bin\Debug\netcoreapp3.1\Fishare-User.Service.deps.json
-C:\Users\Davey\Documents\Software projecten\FishareV2\Fishare-microservices\Fishare-UserService\Fishare-User.Service\bin\Debug\netcoreapp3.1\Fishare-User.Service.dll
-C:\Users\Davey\Documents\Software projecten\FishareV2\Fishare-microservices\Fishare-UserService\Fishare-User.Service\bin\Debug\netcoreapp3.1\Fishare-User.Service.pdb
-C:\Users\Davey\Documents\Software projecten\FishareV2\Fishare-microservices\Fishare-UserService\Fishare-User.Service\obj\Debug\netcoreapp3.1\Fishare-User.Service.csprojAssemblyReference.cache
-C:\Users\Davey\Documents\Software projecten\FishareV2\Fishare-microservices\Fishare-UserService\Fishare-User.Service\obj\Debug\netcoreapp3.1\Fishare-User.Service.csproj.CoreCompileInputs.cache
-C:\Users\Davey\Documents\Software projecten\FishareV2\Fishare-microservices\Fishare-UserService\Fishare-User.Service\obj\Debug\netcoreapp3.1\Fishare-User.Service.AssemblyInfoInputs.cache
-C:\Users\Davey\Documents\Software projecten\FishareV2\Fishare-microservices\Fishare-UserService\Fishare-User.Service\obj\Debug\netcoreapp3.1\Fishare-User.Service.AssemblyInfo.cs
-C:\Users\Davey\Documents\Software projecten\FishareV2\Fishare-microservices\Fishare-UserService\Fishare-User.Service\obj\Debug\netcoreapp3.1\Fishare-User.Service.dll
-C:\Users\Davey\Documents\Software projecten\FishareV2\Fishare-microservices\Fishare-UserService\Fishare-User.Service\obj\Debug\netcoreapp3.1\Fishare-User.Service.pdb

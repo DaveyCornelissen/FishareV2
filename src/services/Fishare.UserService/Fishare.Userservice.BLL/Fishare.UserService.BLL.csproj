@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Fishare.UserService.BLL</AssemblyName>
+    <RootNamespace>Fishare.UserService.BLL</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fishare.UserService.DAL\Fishare.UserService.DAL.csproj" />
+    <ProjectReference Include="..\Fishare.UserService.Model\Fishare.UserService.Model.csproj" />
+  </ItemGroup>
+
+</Project>

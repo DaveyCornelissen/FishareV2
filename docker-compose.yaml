@@ -1,35 +1,67 @@
 version: "3.7"
 
 services:
-  Auth-db:
-    image: mongo
-    container_name: fishare-auth-db
+  fishare-identitycontext-container:
+    image: mongo:latest
+    restart: always
+    container_name: fishare-identitycontext
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
-      - MONGO_INITDB_DATABASE=authentication
+      - MONGO_INITDB_DATABASE=identity
       - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin12345
     volumes:
       - MongoDB-Auth:/data/db
       - MongoDB-Auth:/data/configdb
     ports:
       - 27017:27017
 
-  Auth-node:
-    image: dcornlissen/fishare-auth-nest-i
-    container_name: fishare-auth-nest
+  fishare-identityservice-container:
+    image: fishare-identityservice-i
+    container_name: fishare-identityservice
     build:
-      context: ./Fishare-microservices/Fishare-Identityservice
+      context: ./src/services/Fishare.IdentityService
       dockerfile: Dockerfile
     volumes:
-      - .:/auth-service
+      - .:/fishare-identityservice
     environment:
       FLASK_ENV: development
+      APP_PORT: '6000'
+      FISHARE_IDENTITYSERVICE_DB: "mongodb://admin:admin12345@fishare-identitycontext:27017/identity?authSource=identity"
     ports:
-      - "3000:3000"
+      - "3000:6000"
+  
+  fishare-usercontext-container:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: fishare-usercontext
+    environment:
+      ACCEPT_EULA: 'Y'
+      SA_PASSWORD: 'Toor12345'
+      MSSQL_PID: 'Developer'
+    restart: always
+    volumes: 
+      - MSSQLDB-User:/var/opt/mssql
+    ports: 
+      - "1433:1433"
+
+  fishare-userservice-container:
+    image: fishare-userservice-i
+    container_name: fishare-userservice
+    build:
+      context: ./src/services/Fishare.UserService
+      dockerfile: Dockerfile
+    volumes:
+      - .:/fishare-userservice
+    environment:
+        ASPNETCORE_ENVIRONMENT: Docker
+        FISHARE_USERSERVICE_DB: "Server=fishare-usercontext;Database=FUSDB;User Id=SA;Password=Toor12345;"
+    ports:
+      - "5000:5000"
 
 volumes: 
   MongoDB-Auth:
     external: false
     name: "Identityservice-database"
+  MSSQLDB-User:
+    name: "Userservice-MSSQL"
