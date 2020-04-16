@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  base: 'http://localhost:3000',
+  base: 'http://localhost:5000',
   endpoint: {
-    signIn: '/identity/approval',
+    signIn: '/user/singIn',
     signUp: '/user/signUp',
   },
   crud: {

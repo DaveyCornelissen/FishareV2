@@ -20,13 +20,6 @@ namespace Fishare.UserService.Controllers
             _userService = new Userservice.BLL.UserService(unitOfWork);
         }
 
-        // GET: api/User
-        //[HttpGet]
-        //public async Task<ActionResult<IEnumerable<User>>> GetUser()
-        //{
-        //    return await _context.User.ToListAsync();
-        //}
-
         // GET: api/User/5
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
@@ -35,30 +28,10 @@ namespace Fishare.UserService.Controllers
         }
 
         // PUT: api/User/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
         public void PutUser(int id, User user)
         {
             _userService.Update(id, user);
         }
-
-        // POST: api/User
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPost]
-        public void PostUser(User user)
-        {
-            _userService.Create(user);
-        }
-
-        // DELETE: api/User/5
-        [HttpDelete("{id}")]
-        public void DeleteUser(int id)
-        {
-            _userService.Delete(id);
-        }
-
-
     }
 }

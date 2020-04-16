@@ -66,6 +66,7 @@ export class IdentityService {
     if (!validatePw) 
       throw new BadRequestException("Password does not match!");
 
+    this.identityModel.deleteOne(identitydb);
     return String(`Succesfully removed Identity: ${identitydb.id}`);
   }
 }

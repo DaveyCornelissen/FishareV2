@@ -13,8 +13,9 @@ export class IdentityController {
         return this.IdentityService.login(req);
     }
 
-    @Post('removal')
-    signOut() {
+    @Post('removal/{id}')
+    @UsePipes(new ValidationPipe())
+    signOut(@Body() req: IdentityDto) {
         return 'Signing Off...'
     }
 
