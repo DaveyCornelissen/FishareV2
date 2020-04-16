@@ -1,13 +1,7 @@
 import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-
-export interface Response<T> {
-  path: '';
-  timestamp: string;
-  data: T;
-}
+import { Response } from 'src/shared/interface/response.interface';
 
 @Injectable()
 export class ResponseInterceptor<T> implements NestInterceptor<T, Response<T>> {

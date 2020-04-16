@@ -3,9 +3,11 @@ import { JwtService } from '@nestjs/jwt';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { IdentityDto } from 'src/shared/dto/identity.dto';
-import { Identity } from 'src/shared/interface/identity.interface';
+import { Identity } from 'src/identity/identity.interface';
 import { PasswordService } from 'src/core/services/password/password.service';
 import { ApprovalDto } from 'src/shared/dto/approval.dto';
+import { promises } from 'dns';
+import { RemovalDto } from 'src/shared/dto/identity.dto copy';
 
 @Injectable()
 export class IdentityService {
@@ -13,18 +15,18 @@ export class IdentityService {
   constructor(@InjectModel('Identity') private identityModel: Model<Identity>,
     private readonly jwtService: JwtService, private passwordService: PasswordService) { }
 
-  async login(approval: ApprovalDto) {
+  async login(approval: ApprovalDto): Promise<any> {
 
-    const identity = await this.identityModel.findOne({email: approval.email})
+    const identity = await this.identityModel.findOne({ email: approval.email })
 
-    if(identity == null)
+    if (identity == null)
       throw new BadRequestException("Couldn't find a user with that email!");
 
     console.log(identity.password);
     const validatePw = await this.passwordService.Compare(approval.password, identity.password);
 
     console.log(validatePw);
-    if(validatePw != true)
+    if (validatePw != true)
       throw new UnauthorizedException();;
 
 
@@ -34,13 +36,13 @@ export class IdentityService {
     };
   }
 
-  async Create(identity: IdentityDto): Promise<String> {
+  async Create(identity: IdentityDto): Promise<string> {
 
-    const res = await this.identityModel.find({email: identity.email});
+    const identitydb = await this.identityModel.find({ email: identity.email });
 
-    if (res.length > 0)
+    if (identitydb.length > 0)
       throw new BadRequestException("Email already exists!");
-      
+
     this.passwordService.Validate(identity.password, identity.confirmPassword);
 
     const hashedPw = await this.passwordService.Hash(identity.password);
@@ -51,4 +53,19 @@ export class IdentityService {
     return 'Youre account is succesfully created!';
   }
 
+  //need to check the jwt token claims to match the payload values
+  async Delete(removal: RemovalDto): Promise<string> {
+
+    const identitydb = await this.identityModel.findOne({ _id: removal.id, email: removal.email })
+
+    if (identitydb != null) 
+      throw new BadRequestException("Email and id does not match!");
+
+    const validatePw = await this.passwordService.Compare(removal.password, identitydb.password);
+
+    if (!validatePw) 
+      throw new BadRequestException("Password does not match!");
+
+    return String(`Succesfully removed Identity: ${identitydb.id}`);
+  }
 }
