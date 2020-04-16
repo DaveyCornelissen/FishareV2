@@ -5,12 +5,14 @@ import { AllExceptionFilter } from './core/filters/allExceptionFilter';
 import { Transport, MicroserviceOptions } from '@nestjs/microservices';
 import { ConfigService } from '@nestjs/config';
 import { ValidationPipe } from '@nestjs/common';
+import { ResponseInterceptor } from './core/interceptors/response.interceptor';
 
 
 async function bootstrap() {
 
   const app = await NestFactory.create(
-    AppModule
+    AppModule,
+    { cors: true }
   );
 
   const configService = app.get(ConfigService);
@@ -19,7 +21,7 @@ async function bootstrap() {
 
 
   app.useGlobalFilters(new AllExceptionFilter());
-  app.enableCors();
+  app.useGlobalInterceptors(new ResponseInterceptor());
   app.useGlobalPipes(new ValidationPipe());
 
   console.log(`${name} is now listening on port: ${port}`)

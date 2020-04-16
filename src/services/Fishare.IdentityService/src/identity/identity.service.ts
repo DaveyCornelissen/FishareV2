@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable, UnauthorizedException, BadRequestException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -18,7 +18,7 @@ export class IdentityService {
     const identity = await this.identityModel.findOne({email: approval.email})
 
     if(identity == null)
-      return 'no user found with this email';
+      throw new BadRequestException("Couldn't find a user with that email!");
 
     console.log(identity.password);
     const validatePw = await this.passwordService.Compare(approval.password, identity.password);
@@ -39,19 +39,16 @@ export class IdentityService {
     const res = await this.identityModel.find({email: identity.email});
 
     if (res.length > 0)
-      return 'Email Already in use!';
+      throw new BadRequestException("Email already exists!");
       
-    let result = this.passwordService.Validate(identity.password, identity.confirmPassword);
-
-    if (result == false)
-      return 'Invalid password!';
+    this.passwordService.Validate(identity.password, identity.confirmPassword);
 
     const hashedPw = await this.passwordService.Hash(identity.password);
     identity.password = hashedPw;
 
     const newIdentity = new this.identityModel(identity);
     newIdentity.save();
-    return 'Identity Succesfull Created';
+    return 'Youre account is succesfully created!';
   }
 
 }
