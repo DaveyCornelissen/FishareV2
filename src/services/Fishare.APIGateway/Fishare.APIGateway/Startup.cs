@@ -42,15 +42,18 @@ namespace Fishare.APIGateway
             })
             .AddJwtBearer(authenticationProviderKey, x =>
             {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuerSigningKey = true,
-                    ValidateAudience = false,
-                    ValidateIssuer = false
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
                 };
             });
 
+            services.AddCors();
             services.AddOcelot(Configuration);
             services.AddControllers();
         }
@@ -69,7 +72,10 @@ namespace Fishare.APIGateway
 
             app.UseAuthorization();
 
-            app.UseCors("CorsPolicy");
+            app.UseCors(b => b.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
 
             app.UseEndpoints(endpoints =>
             {

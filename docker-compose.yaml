@@ -1,6 +1,17 @@
 version: "3.7"
 
 services:
+  fishare-angular-webapp:
+    image: fishare-angular-webapp-i
+    container_name: fishare-angular-webapp
+    environment: 
+      ANGULAR_ENV: development
+    build:
+      context: ./src/Fishare-Angular
+      dockerfile: Dockerfile
+    ports: 
+      - 8080:80
+
   fishare-identitycontext-container:
     image: mongo:latest
     restart: always

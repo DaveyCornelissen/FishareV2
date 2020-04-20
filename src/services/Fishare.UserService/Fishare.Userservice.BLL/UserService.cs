@@ -44,9 +44,6 @@ namespace Fishare.Userservice.BLL
 
             oldUser.Email = user.Email;
             oldUser.Username = user.Username;
-            oldUser.Adress = user.Adress;
-            oldUser.FirstName = user.FirstName;
-            oldUser.LastName = user.LastName;
             oldUser.Country = user.Country;
 
             _unitOfWork.Complete();

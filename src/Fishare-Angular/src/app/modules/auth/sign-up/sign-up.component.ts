@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from 'src/app/shared/models/User';
 import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,14 +15,12 @@ export class SignUpComponent implements OnInit {
   submitted = false;
   User = new User();
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private authService: AuthService) { }
 
   ngOnInit() {
     this.signUpForm = this.formBuilder.group({
-      userName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      address: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(8)]],
       country: ['', Validators.required],
       confirmPassword: ['', [Validators.required, Validators.minLength(8)]]
@@ -41,20 +40,20 @@ export class SignUpComponent implements OnInit {
       return;
     }
 
-    // this.authService.signUp(this.User.deserialize(this.signUpForm.value)).subscribe(
-    //   (res) => {
-    //     this.redirectDialog.open(RedirectDialogComponent, {
-    //       width: '250px',
-    //       data: {
-    //         title: 'Success',
-    //         content: res.message,
-    //         router: {
-    //           name: 'Sign In',
-    //           routerLink: '/signIn'
-    //         }
-    //       }
-    //     });
-    //   });
+    this.authService.signUp(this.User.deserialize(this.signUpForm.value)).subscribe(
+      // (res) => {
+      //   // this.redirectDialog.open(RedirectDialogComponent, {
+      //   //   width: '250px',
+      //   //   data: {
+      //   //     title: 'Success',
+      //   //     content: res.message,
+      //   //     router: {
+      //   //       name: 'Sign In',
+      //   //       routerLink: '/signIn'
+      //   //     }
+      //   //   }
+      //   });
+      );
   }
 
 
