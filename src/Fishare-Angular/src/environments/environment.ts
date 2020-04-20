@@ -3,7 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  base: 'http://localhost:5000',
+  endpoint: {
+    signIn: '/user/singIn',
+    signUp: '/user/signUp',
+  },
+  crud: {
+    create: '/create',
+    update: '/update',
+    delete: '/delete'
+  }
+
 };
 
 /*

@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContentLayoutComponent } from './layouts/content-layout/content-layout.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/auth/signIn',
+    pathMatch: 'full'
+  },
+  {
     path: 'auth',
-    component: ContentLayoutComponent,
+    component: AuthLayoutComponent,
     loadChildren: () =>
       import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
 
   // Fallback when no prior routes is matched
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  { path: '**', redirectTo: '/auth/signIn', pathMatch: 'full' }
 ];
 
 @NgModule({

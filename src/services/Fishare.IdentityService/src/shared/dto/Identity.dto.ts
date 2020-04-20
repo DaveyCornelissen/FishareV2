@@ -1,17 +1,17 @@
-import { IsEmail, IsNotEmpty, MinLength, Contains, IsUppercase, IsString } from "class-validator";
+import { IsEmail, MinLength, IsString } from "class-validator";
+import { Identity } from "src/identity/identity.interface";
 
 export class IdentityDto {
-    
-    UserID?: Number
-    
+
     @IsEmail()
     email: string;
 
     @MinLength(8)
     @IsString()
-    password: string;
+    password: string
 
-    @MinLength(8)
-    @IsString()
-    confirmPassword: string;
+    constructor(email: string, password: string) {
+        this.email = email,
+        this.password = password
+    }
 }

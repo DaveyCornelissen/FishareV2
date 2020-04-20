@@ -1,30 +1,28 @@
-import { Controller, Post, UseGuards, Request, Body, ValidationPipe, UsePipes } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
+import { Controller, Post, Body, ValidationPipe, UsePipes, Param, Delete } from '@nestjs/common';
 import { IdentityService } from './identity.service';
-import { LocalAuthGuard } from 'src/core/guards/local-auth-guard';
-import { JwtAuthGuard } from 'src/core/guards/jwt-auth-guard';
+import { RegistrationDto } from 'src/shared/dto/registration.dto';
 import { IdentityDto } from 'src/shared/dto/identity.dto';
-
+import { Transform } from 'stream';
 
 @Controller('identity')
 export class IdentityController {
     constructor(private IdentityService: IdentityService) {}
 
-    @UseGuards(LocalAuthGuard)
     @Post('approval')
-    async signIn(@Request() req) {
-        return this.IdentityService.login(req.user);
+    async signIn(@Body() req : RegistrationDto) {
+        return this.IdentityService.login(req);
     }
 
-    @UseGuards()
-    @Post('removal')
-    signOut() {
-        return 'Signing Off...'
+    @Delete('removal/:id')
+    @UsePipes(new ValidationPipe())
+    signOut(@Param('id') id, @Body() req: IdentityDto) {
+        console.log(id);
+        return this.IdentityService.Delete(id, req);
     }
 
     @Post('registration')
-    @UsePipes(new ValidationPipe({ whitelist: true }))
-    signUp(@Body() body: IdentityDto) {
-        return this.IdentityService.Create(body)
+    @UsePipes(new ValidationPipe())
+    signUp(@Body() req: RegistrationDto) {
+        return this.IdentityService.Create(req)
     }
 }

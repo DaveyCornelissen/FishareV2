@@ -1,18 +1,15 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, BadRequestException } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class PasswordService {
 
   public Validate(password: string, confirmPassword: string) {
+    if (password !== confirmPassword) throw new BadRequestException("Passwords do not match!");
 
-    if (password !== confirmPassword) return false;
+    if (!password.match(/[A-Z]/)) throw new BadRequestException("Passwords doesnt match the criteria of atleast 1 uppercase!");
 
-    if (!password.match(/[A-Z]/)) return false;
-
-    if (!password.match(/\d/)) return false;
-
-    return true;
+    if (!password.match(/\d/)) throw new BadRequestException("Passwords doesnt match the criteria of atleast 1 lowercase!");;
   }
 
   public async Hash(password: string) {

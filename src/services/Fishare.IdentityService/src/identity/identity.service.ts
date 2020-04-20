@@ -1,10 +1,12 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException, BadRequestException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { IdentityDto } from 'src/shared/dto/identity.dto';
-import { Identity } from 'src/shared/interface/identity.interface';
+import { RegistrationDto } from 'src/shared/dto/registration.dto';
+import { Identity } from 'src/identity/identity.interface';
 import { PasswordService } from 'src/core/services/password/password.service';
+import { IdentityDto } from 'src/shared/dto/identity.dto';
+import { UserDTO } from 'src/shared/dto/User.dto';
 
 @Injectable()
 export class IdentityService {
@@ -12,46 +14,62 @@ export class IdentityService {
   constructor(@InjectModel('Identity') private identityModel: Model<Identity>,
     private readonly jwtService: JwtService, private passwordService: PasswordService) { }
 
-  async validateIdentity(email: string, pass: string): Promise<any> {
+  async login(approval: IdentityDto): Promise<any> {
 
-    const identity = await this.identityModel.findOne({email: email})
+    const identityDb = await this.identityModel.findOne({ email: approval.email })
 
-    console.log(identity.password);
-    const validatePw = await this.passwordService.Compare(pass, identity.password);
+    if (identityDb == null)
+      throw new BadRequestException("Couldn't find a user with that email!");
+
+    console.log(identityDb.password);
+    const validatePw = await this.passwordService.Compare(approval.password, identityDb.password);
 
     console.log(validatePw);
-    if(validatePw != true)
-      return null;
+    if (validatePw != true)
+      throw new UnauthorizedException();;
 
-    return identity;  
-  }
-
-  async login(identity: IdentityDto) {
-    const payload = { id: 1, email: identity.email };
+    const payload = { id: identityDb.id, email: identityDb.email };
     return {
       access_token: this.jwtService.sign(payload),
     };
   }
 
-  //Need to hash the password. and check if the passwords are valid.
-  async Create(identity: IdentityDto): Promise<String> {
+  async Create(registration: RegistrationDto): Promise<string> {
 
-    const res = await this.identityModel.find({email: identity.email});
+    const dbResult = await this.identityModel.find({ email: registration.email });
 
-    if (res.length > 0)
-      return 'Email Already in use!';
-      
-    let result = this.passwordService.Validate(identity.password, identity.confirmPassword);
+    if (dbResult.length > 0)
+      throw new BadRequestException("Email already exists!");
 
-    if (result == false)
-      return 'Invalid password!';
+    this.passwordService.Validate(registration.password, registration.confirmPassword);
 
-    const hashedPw = await this.passwordService.Hash(identity.password);
-    identity.password = hashedPw;
-
-    const newIdentity = new this.identityModel(identity);
+    const hashedPw = await this.passwordService.Hash(registration.password);
+    registration.password = hashedPw;
+    
+    const newIdentity = new this.identityModel(registration);
     newIdentity.save();
-    return 'Identity Succesfull Created';
+
+    const userEvent = new UserDTO(newIdentity.id, registration.email, registration.username, registration.country);
+    console.log(userEvent);
+    //TODO need to send an event with the event broker
+
+    return 'Account is succesfully created!';
   }
 
+  //need to check the jwt token claims to match the payload values
+  async Delete(id: Number, removal: IdentityDto): Promise<string> {
+
+    const identityDb = await this.identityModel.findOne({ _id: id, email: removal.email })
+
+    if (identityDb != null) 
+      throw new BadRequestException("Email and id does not match!");
+
+    const validatePw = await this.passwordService.Compare(removal.password, identityDb.password);
+
+    if (!validatePw) 
+      throw new BadRequestException("Password does not match!");
+
+    this.identityModel.deleteOne(identityDb);
+    return String(`Succesfully removed Identity: ${identityDb.id}`);
+  }
 }
