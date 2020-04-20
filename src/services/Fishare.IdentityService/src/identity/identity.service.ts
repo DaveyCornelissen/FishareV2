@@ -6,6 +6,7 @@ import { RegistrationDto } from 'src/shared/dto/registration.dto';
 import { Identity } from 'src/identity/identity.interface';
 import { PasswordService } from 'src/core/services/password/password.service';
 import { IdentityDto } from 'src/shared/dto/identity.dto';
+import { UserDTO } from 'src/shared/dto/User.dto';
 
 @Injectable()
 export class IdentityService {
@@ -27,7 +28,6 @@ export class IdentityService {
     if (validatePw != true)
       throw new UnauthorizedException();;
 
-
     const payload = { id: identityDb.id, email: identityDb.email };
     return {
       access_token: this.jwtService.sign(payload),
@@ -36,19 +36,24 @@ export class IdentityService {
 
   async Create(registration: RegistrationDto): Promise<string> {
 
-    const identityDb = await this.identityModel.find({ email: registration.email });
+    const dbResult = await this.identityModel.find({ email: registration.email });
 
-    if (identityDb.length > 0)
+    if (dbResult.length > 0)
       throw new BadRequestException("Email already exists!");
 
     this.passwordService.Validate(registration.password, registration.confirmPassword);
 
     const hashedPw = await this.passwordService.Hash(registration.password);
     registration.password = hashedPw;
-
+    
     const newIdentity = new this.identityModel(registration);
     newIdentity.save();
-    return 'Youre account is succesfully created!';
+
+    const userEvent = new UserDTO(newIdentity.id, registration.email, registration.username, registration.country);
+    console.log(userEvent);
+    //TODO need to send an event with the event broker
+
+    return 'Account is succesfully created!';
   }
 
   //need to check the jwt token claims to match the payload values
