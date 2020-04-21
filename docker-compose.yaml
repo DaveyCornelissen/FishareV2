@@ -1,6 +1,24 @@
 version: "3.7"
 
 services:
+
+  fishare-rabbitmq-container:
+    image: rabbitmq:3.8.3-management
+    hostname: rabbithost
+    environment: 
+      RABBITMQ_ERLANG_COOKIE: FishyCookie
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+      RABBITMQ_DEFAULT_VHOST: "/"
+    labels:
+      NAME: "rabbitmq"
+    volumes:
+      - "RabbitMQ-host=/etc/rabbitmq/enabled_plugins"
+    ports: 
+      - 5672:5672
+      - 15672:15672
+
+
   fishare-angular-webapp:
     image: fishare-angular-webapp-i
     container_name: fishare-angular-webapp
@@ -76,3 +94,5 @@ volumes:
     name: "Identityservice-database"
   MSSQLDB-User:
     name: "Userservice-MSSQL"
+  RabbitMQ-host:
+    name: "RabbitMQ-volume"

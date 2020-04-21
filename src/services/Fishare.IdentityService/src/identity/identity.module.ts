@@ -6,9 +6,23 @@ import { jwtConstants } from '../core/config/constants';
 import { MongooseModule } from '@nestjs/mongoose';
 import { IdentitySchema } from './identity.schema';
 import { PasswordService } from 'src/core/services/password/password.service';
+import { ClientsModule, Transport } from '@nestjs/microservices';
 
 @Module({
   imports: [
+    ClientsModule.register([
+      {
+        name: 'IDENTITY_SERVICE',
+        transport: Transport.RMQ,
+        options: {
+          urls: ['amqp://user:password@localhost:5672/Fishare-Vhost'],
+          queue: 'UserQueue',
+          queueOptions: {
+            durable: false
+          },
+        },
+      },
+    ]),
     JwtModule.register({
       secret: jwtConstants.secret,
       signOptions: { expiresIn: '3d' },

@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException, BadRequestException } from '@nestjs/common';
+import { Injectable, UnauthorizedException, BadRequestException, Inject } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -6,13 +6,14 @@ import { RegistrationDto } from 'src/shared/dto/registration.dto';
 import { Identity } from 'src/identity/identity.interface';
 import { PasswordService } from 'src/core/services/password/password.service';
 import { IdentityDto } from 'src/shared/dto/identity.dto';
-import { UserDTO } from 'src/shared/dto/User.dto';
+import { UserDTO } from 'src/shared/dto/user.dto';
+import { ClientRMQ, ClientProxy } from '@nestjs/microservices';
 
 @Injectable()
 export class IdentityService {
 
   constructor(@InjectModel('Identity') private identityModel: Model<Identity>,
-    private readonly jwtService: JwtService, private passwordService: PasswordService) { }
+    private readonly jwtService: JwtService, private passwordService: PasswordService, @Inject('IDENTITY_SERVICE') private readonly client: ClientProxy) { }
 
   async login(approval: IdentityDto): Promise<any> {
 
@@ -52,6 +53,8 @@ export class IdentityService {
     const userEvent = new UserDTO(newIdentity.id, registration.email, registration.username, registration.country);
     console.log(userEvent);
     //TODO need to send an event with the event broker
+
+    this.client.emit<number>('user_created', userEvent);
 
     return 'Account is succesfully created!';
   }
