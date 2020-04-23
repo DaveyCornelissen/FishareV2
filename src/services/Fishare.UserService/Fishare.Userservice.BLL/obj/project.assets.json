@@ -4957,8 +4957,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Fishare.UserService.DAL >= 1.0.0",
-      "Fishare.UserService.Model >= 1.0.0"
+      "Fishare.UserService.DAL >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4989,9 +4988,6 @@
           "projectReferences": {
             "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.DAL\\Fishare.UserService.DAL.csproj": {
               "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.DAL\\Fishare.UserService.DAL.csproj"
-            },
-            "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.Model\\Fishare.UserService.Model.csproj": {
-              "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.Model\\Fishare.UserService.Model.csproj"
             }
           }
         }

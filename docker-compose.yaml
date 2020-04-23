@@ -4,20 +4,21 @@ services:
 
   fishare-rabbitmq-container:
     image: rabbitmq:3.8.3-management
+    container_name: fishare-rabbitmq
     hostname: rabbithost
     environment: 
       RABBITMQ_ERLANG_COOKIE: FishyCookie
       RABBITMQ_DEFAULT_USER: user
       RABBITMQ_DEFAULT_PASS: password
-      RABBITMQ_DEFAULT_VHOST: "/"
+      RABBITMQ_DEFAULT_VHOST: "fishare_Vhost"
     labels:
       NAME: "rabbitmq"
     volumes:
       - "RabbitMQ-host=/etc/rabbitmq/enabled_plugins"
+      - "RabbitMQ-host:/var/lib/rabbitmq"
     ports: 
       - 5672:5672
       - 15672:15672
-
 
   fishare-angular-webapp:
     image: fishare-angular-webapp-i

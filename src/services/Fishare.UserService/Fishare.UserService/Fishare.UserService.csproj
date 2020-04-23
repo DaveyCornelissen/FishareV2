@@ -17,10 +17,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fishare.UserService.BLL\Fishare.UserService.BLL.csproj" />
     <ProjectReference Include="..\Fishare.UserService.Composition\Fishare.UserService.Composition.csproj" />
   </ItemGroup>
 

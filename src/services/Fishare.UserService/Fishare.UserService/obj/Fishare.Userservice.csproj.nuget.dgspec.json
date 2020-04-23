@@ -29,9 +29,6 @@
             "projectReferences": {
               "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.DAL\\Fishare.UserService.DAL.csproj": {
                 "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.DAL\\Fishare.UserService.DAL.csproj"
-              },
-              "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.Model\\Fishare.UserService.Model.csproj": {
-                "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.Model\\Fishare.UserService.Model.csproj"
               }
             }
           }
@@ -86,8 +83,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.DAL\\Fishare.UserService.DAL.csproj": {
-                "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.DAL\\Fishare.UserService.DAL.csproj"
+              "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userservice.BLL\\Fishare.UserService.BLL.csproj": {
+                "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userservice.BLL\\Fishare.UserService.BLL.csproj"
               }
             }
           }
@@ -274,9 +271,6 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.BLL\\Fishare.UserService.BLL.csproj": {
-                "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.BLL\\Fishare.UserService.BLL.csproj"
-              },
               "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.Composition\\Fishare.UserService.Composition.csproj": {
                 "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.Composition\\Fishare.UserService.Composition.csproj"
               }
@@ -313,6 +307,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.1, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [

@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Fishare.UserService.BLL/1.0.0": {
         "dependencies": {
-          "Fishare.UserService.DAL": "1.0.0",
-          "Fishare.UserService.Model": "1.0.0"
+          "Fishare.UserService.DAL": "1.0.0"
         },
         "runtime": {
           "Fishare.UserService.BLL.dll": {}

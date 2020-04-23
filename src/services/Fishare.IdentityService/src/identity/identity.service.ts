@@ -7,7 +7,7 @@ import { Identity } from 'src/identity/identity.interface';
 import { PasswordService } from 'src/core/services/password/password.service';
 import { IdentityDto } from 'src/shared/dto/identity.dto';
 import { UserDTO } from 'src/shared/dto/user.dto';
-import { ClientRMQ, ClientProxy } from '@nestjs/microservices';
+import { ClientProxy } from '@nestjs/microservices';
 
 @Injectable()
 export class IdentityService {
@@ -54,7 +54,7 @@ export class IdentityService {
     console.log(userEvent);
     //TODO need to send an event with the event broker
 
-    this.client.emit<number>('user_created', userEvent);
+    this.client.emit<number>('user.created', userEvent);
 
     return 'Account is succesfully created!';
   }

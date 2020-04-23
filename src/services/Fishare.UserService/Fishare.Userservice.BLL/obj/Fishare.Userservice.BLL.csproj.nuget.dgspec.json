@@ -29,9 +29,6 @@
             "projectReferences": {
               "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.DAL\\Fishare.UserService.DAL.csproj": {
                 "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.DAL\\Fishare.UserService.DAL.csproj"
-              },
-              "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.Model\\Fishare.UserService.Model.csproj": {
-                "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.Model\\Fishare.UserService.Model.csproj"
               }
             }
           }
