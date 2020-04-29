@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException, BadRequestException, Inject } from '@nestjs/common';
+import { Injectable, UnauthorizedException, BadRequestException, Inject, OnApplicationBootstrap } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -10,10 +10,15 @@ import { UserDTO } from 'src/shared/dto/user.dto';
 import { ClientProxy } from '@nestjs/microservices';
 
 @Injectable()
-export class IdentityService {
+export class IdentityService implements OnApplicationBootstrap {
 
   constructor(@InjectModel('Identity') private identityModel: Model<Identity>,
     private readonly jwtService: JwtService, private passwordService: PasswordService, @Inject('IDENTITY_SERVICE') private readonly client: ClientProxy) { }
+
+
+  async onApplicationBootstrap() {
+    await this.client.connect();
+  }
 
   async login(approval: IdentityDto): Promise<any> {
 
@@ -46,7 +51,7 @@ export class IdentityService {
 
     const hashedPw = await this.passwordService.Hash(registration.password);
     registration.password = hashedPw;
-    
+
     const newIdentity = new this.identityModel(registration);
     newIdentity.save();
 
@@ -54,7 +59,7 @@ export class IdentityService {
     console.log(userEvent);
     //TODO need to send an event with the event broker
 
-    this.client.emit<number>('user.created', userEvent);
+    this.client.emit<number>('user.queue.created', userEvent);
 
     return 'Account is succesfully created!';
   }
@@ -64,12 +69,12 @@ export class IdentityService {
 
     const identityDb = await this.identityModel.findOne({ _id: id, email: removal.email })
 
-    if (identityDb != null) 
+    if (identityDb != null)
       throw new BadRequestException("Email and id does not match!");
 
     const validatePw = await this.passwordService.Compare(removal.password, identityDb.password);
 
-    if (!validatePw) 
+    if (!validatePw)
       throw new BadRequestException("Password does not match!");
 
     this.identityModel.deleteOne(identityDb);

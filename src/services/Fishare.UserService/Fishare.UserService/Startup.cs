@@ -1,4 +1,5 @@
 ﻿
+using Fishare.UserService.Composition;
 using Fishare.UserService.DAL.Repository;
 using Fishare.UserServices.Composition;
 using Microsoft.AspNetCore.Builder;
@@ -24,6 +25,8 @@ namespace Fishare_UserService
             services.AddControllers();
 
             ContextInitializer.Init(services, Configuration);
+
+            BrokerInitializer.Init(services, Configuration);
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }

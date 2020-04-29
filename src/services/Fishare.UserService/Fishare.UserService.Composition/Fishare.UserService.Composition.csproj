@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Fishare.Userservice.BLL\Fishare.UserService.BLL.csproj" />
+    <ProjectReference Include="..\Fishare.UserService.Broker\Fishare.UserService.Broker.csproj" />
   </ItemGroup>
 
 </Project>

@@ -457,3 +457,8 @@ C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserS
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\Fishare.UserService.csproj.CoreCompileInputs.cache
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\obj\Debug\netcoreapp3.1\Fishare.UserService.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.ObjectPool.dll
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.Broker.dll
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService\bin\Debug\netcoreapp3.1\Fishare.UserService.Broker.pdb

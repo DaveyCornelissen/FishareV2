@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Y9UYNYylk60NSzwZa9ddDa+kkDAQucTFZHGdFMUsFixU9bUJNb48AoHhf2aqNxBAMPXilBNq5n05rMgsyO2rRQ==",
+  "dgSpecHash": "aNdKVRHXjTl+DRBvMOIA6TKV4lYMQfA05+Ywnx9idSzXZTtEckkakR/7jZsJEmtyCWskKdkGuzNe7Ffz+onNnw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService\\Fishare.UserService.csproj",
   "expectedPackageFiles": [
@@ -37,8 +37,11 @@
     "C:\\Users\\Davey\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.3\\microsoft.extensions.dependencyinjection.3.1.3.nupkg.sha512",
     "C:\\Users\\Davey\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.3\\microsoft.extensions.dependencyinjection.abstractions.3.1.3.nupkg.sha512",
     "C:\\Users\\Davey\\.nuget\\packages\\microsoft.extensions.dependencymodel\\3.1.3\\microsoft.extensions.dependencymodel.3.1.3.nupkg.sha512",
+    "C:\\Users\\Davey\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\3.1.3\\microsoft.extensions.fileproviders.abstractions.3.1.3.nupkg.sha512",
+    "C:\\Users\\Davey\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\3.1.3\\microsoft.extensions.hosting.abstractions.3.1.3.nupkg.sha512",
     "C:\\Users\\Davey\\.nuget\\packages\\microsoft.extensions.logging\\3.1.3\\microsoft.extensions.logging.3.1.3.nupkg.sha512",
     "C:\\Users\\Davey\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.3\\microsoft.extensions.logging.abstractions.3.1.3.nupkg.sha512",
+    "C:\\Users\\Davey\\.nuget\\packages\\microsoft.extensions.objectpool\\3.1.3\\microsoft.extensions.objectpool.3.1.3.nupkg.sha512",
     "C:\\Users\\Davey\\.nuget\\packages\\microsoft.extensions.options\\3.1.3\\microsoft.extensions.options.3.1.3.nupkg.sha512",
     "C:\\Users\\Davey\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.3\\microsoft.extensions.primitives.3.1.3.nupkg.sha512",
     "C:\\Users\\Davey\\.nuget\\packages\\microsoft.identity.client\\3.0.8\\microsoft.identity.client.3.0.8.nupkg.sha512",
