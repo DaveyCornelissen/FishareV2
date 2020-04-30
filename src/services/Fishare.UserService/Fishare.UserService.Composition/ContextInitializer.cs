@@ -1,11 +1,11 @@
 ﻿using Fishare.UserService.DAL;
-using Fishare.UserServices.Composition.Interfaces;
+using Fishare.UserService.Composition.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Fishare.UserServices.Composition
+namespace Fishare.UserService.Composition
 {
     public class ContextInitializer : IInitializer
     {

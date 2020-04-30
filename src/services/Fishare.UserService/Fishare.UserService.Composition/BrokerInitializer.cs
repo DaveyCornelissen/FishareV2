@@ -1,13 +1,10 @@
 ﻿using Fishare.UserService.Broker;
 using Fishare.UserService.Broker.Interfaces;
-using Fishare.UserServices.Composition.Interfaces;
+using Fishare.UserService.Composition.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.ObjectPool;
 using RabbitMQ.Client;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Fishare.UserService.Composition
 {
@@ -19,9 +16,8 @@ namespace Fishare.UserService.Composition
             
             services.AddHostedService<RabbitWorker>();
 
-            services.AddSingleton<IPooledObjectPolicy<IModel>, RabbitWorker>();
-
-            services.AddSingleton<IRabbitService, RabbitService>();
+            services.AddSingleton<ObjectPoolProvider, DefaultObjectPoolProvider>();
+            services.AddSingleton<IPooledObjectPolicy<IModel>, RabbitProvider>();
         }
     }
 }

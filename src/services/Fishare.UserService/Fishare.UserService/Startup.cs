@@ -1,12 +1,12 @@
 ﻿
 using Fishare.UserService.Composition;
 using Fishare.UserService.DAL.Repository;
-using Fishare.UserServices.Composition;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Controller;
 
 namespace Fishare_UserService
 {
@@ -27,6 +27,8 @@ namespace Fishare_UserService
             ContextInitializer.Init(services, Configuration);
 
             BrokerInitializer.Init(services, Configuration);
+
+            ServicesInitializer.Init(services, Configuration);
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }

@@ -1,8 +1,10 @@
 ﻿using Fishare.UserService.Broker.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
@@ -14,43 +16,25 @@ using System.Threading.Tasks;
 
 namespace Fishare.UserService.Broker
 {
-    public class RabbitWorker : BackgroundService, IPooledObjectPolicy<IModel>
+    public class RabbitWorker : BackgroundService
     {
         private readonly ILogger _logger;
         private readonly RabbitOptions _options;
-        private IRabbitService rabbitService;
-        private IConnection _connection;
         private IModel _channel;
+        private IRabbitService _rabbitService;
+        private IPooledObjectPolicy<IModel> _provider;
 
-        public RabbitWorker(ILoggerFactory loggerFactory, IOptions<RabbitOptions> options)
+        public RabbitWorker(ILoggerFactory loggerFactory, IOptions<RabbitOptions> options, IServiceScopeFactory scopeFactory)
         {
-            this._logger = loggerFactory.CreateLogger<RabbitWorker>();
-            this._options = options.Value;
-            this.rabbitService = new RabbitService();
-            InitRabbitMQ();
-        }
+            _logger = loggerFactory.CreateLogger<RabbitWorker>();
+            _options = options.Value;
 
-        private void InitRabbitMQ()
-        {
-            var factory = new ConnectionFactory { 
-                HostName = _options.HostName, 
-                Port = _options.Port, 
-                UserName = _options.UserName, 
-                Password = _options.Password, 
-                VirtualHost = _options.VHost
-            };
-
-            // create connection  
-            _connection = factory.CreateConnection();
-
-            // create channel  
-            _channel = Create();
-
-
-            _channel.QueueBind(_options.Queue, _options.Exchange, _options.Queue + ".*", null);
-            //_channel.BasicQos(0, 1, false);
-
-            _connection.ConnectionShutdown += RabbitMQ_ConnectionShutdown;
+            using (var serviceScope = scopeFactory.CreateScope())
+            {
+                _provider = serviceScope.ServiceProvider.GetRequiredService<IPooledObjectPolicy<IModel>>();
+                _rabbitService = serviceScope.ServiceProvider.GetRequiredService<IRabbitService>();
+            }
+            _channel = _provider.Create();
         }
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
@@ -60,11 +44,13 @@ namespace Fishare.UserService.Broker
             var consumer = new EventingBasicConsumer(_channel);
             consumer.Received += (ch, ea) =>
             {
+                //convert bytes to string
+                string payload = Encoding.UTF8.GetString(ea.Body.ToArray());
 
-
+                // received message  
+                var content = JsonConvert.DeserializeObject(payload);
                 // handle the received message  
-                rabbitService.Recieve(ea);
-                Console.WriteLine(ea.ToString());
+                _rabbitService.Recieve(ea.RoutingKey, content.ToString());
                 //_logger.LogInformation($"consumer received {content}");
                 _channel.BasicAck(ea.DeliveryTag, false);
             };
@@ -82,32 +68,12 @@ namespace Fishare.UserService.Broker
         private void OnConsumerUnregistered(object sender, ConsumerEventArgs e) { }
         private void OnConsumerRegistered(object sender, ConsumerEventArgs e) { }
         private void OnConsumerShutdown(object sender, ShutdownEventArgs e) { }
-        private void RabbitMQ_ConnectionShutdown(object sender, ShutdownEventArgs e) { }
 
         public override void Dispose()
         {
             _channel.Close();
-            _connection.Close();
+            _provider.Return(_channel);
             base.Dispose();
         }
-
-        public IModel Create()
-        {
-            return _connection.CreateModel();
-        }
-
-        public bool Return(IModel obj)
-        {
-            if (obj.IsOpen)
-            {
-                return true;
-            }
-            else
-            {
-                obj?.Dispose();
-                return false;
-            }
-        }
     }
-
 }

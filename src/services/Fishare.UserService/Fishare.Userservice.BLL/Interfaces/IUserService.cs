@@ -1,7 +1,7 @@
 ﻿using Fishare.UserService.Model;
 using System.Threading.Tasks;
 
-namespace Fishare.Userservice.BLL.Interfaces
+namespace Fishare.UserService.BLL.Interfaces
 {
     public interface IUserService
     {
