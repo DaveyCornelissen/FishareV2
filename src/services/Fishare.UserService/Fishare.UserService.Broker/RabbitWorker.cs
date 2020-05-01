@@ -1,4 +1,5 @@
-﻿using Fishare.UserService.Broker.Interfaces;
+﻿using Fishare.UserService.Broker.Events;
+using Fishare.UserService.Broker.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -23,18 +24,19 @@ namespace Fishare.UserService.Broker
         private IModel _channel;
         private IRabbitService _rabbitService;
         private IPooledObjectPolicy<IModel> _provider;
+        private IServiceScopeFactory _scopeFactory;
 
         public RabbitWorker(ILoggerFactory loggerFactory, IOptions<RabbitOptions> options, IServiceScopeFactory scopeFactory)
         {
             _logger = loggerFactory.CreateLogger<RabbitWorker>();
             _options = options.Value;
+            _scopeFactory = scopeFactory;
 
             using (var serviceScope = scopeFactory.CreateScope())
             {
                 _provider = serviceScope.ServiceProvider.GetRequiredService<IPooledObjectPolicy<IModel>>();
-                _rabbitService = serviceScope.ServiceProvider.GetRequiredService<IRabbitService>();
+                _channel = _provider.Create();
             }
-            _channel = _provider.Create();
         }
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
@@ -48,11 +50,22 @@ namespace Fishare.UserService.Broker
                 string payload = Encoding.UTF8.GetString(ea.Body.ToArray());
 
                 // received message  
-                var content = JsonConvert.DeserializeObject(payload);
-                // handle the received message  
-                _rabbitService.Recieve(ea.RoutingKey, content.ToString());
-                //_logger.LogInformation($"consumer received {content}");
-                _channel.BasicAck(ea.DeliveryTag, false);
+                try
+                {
+                    using (var serviceScope = _scopeFactory.CreateScope())
+                    {
+                        _rabbitService = serviceScope.ServiceProvider.GetRequiredService<IRabbitService>();
+
+                        var content = JsonConvert.DeserializeObject<EventContent>(payload);
+                        // handle the received message  
+                        _rabbitService.Recieve(content.pattern, content.data);
+                    }
+                }
+                finally
+                {
+                    //_logger.LogInformation($"consumer received {content}");
+                    _channel.BasicAck(ea.DeliveryTag, false);
+                }
             };
 
             consumer.Shutdown += OnConsumerShutdown;

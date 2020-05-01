@@ -20,10 +20,8 @@ namespace Fishare.UserService.DAL.Migrations
 
             modelBuilder.Entity("Fishare.UserService.Model.User", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("ID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Country")
                         .HasColumnType("nvarchar(max)");

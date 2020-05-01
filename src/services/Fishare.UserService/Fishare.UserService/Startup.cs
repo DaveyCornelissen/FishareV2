@@ -29,8 +29,6 @@ namespace Fishare_UserService
             BrokerInitializer.Init(services, Configuration);
 
             ServicesInitializer.Init(services, Configuration);
-
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

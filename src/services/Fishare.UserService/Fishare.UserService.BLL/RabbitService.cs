@@ -10,10 +10,9 @@ namespace Fishare.UserService.Broker
     public class RabbitService : IRabbitService
     {
         private readonly IUserService _userService;
-        public RabbitService(IServiceScopeFactory scopeFactory)
+        public RabbitService(IUserService userService)
         {
-            using var serviceScope = scopeFactory.CreateScope();
-            _userService = serviceScope.ServiceProvider.GetRequiredService<IUserService>();
+            _userService = userService;
         }
        
         public void Publish<T>(T message, string exchangeName, string exchangeType, string routeKey) where T : class
@@ -21,17 +20,14 @@ namespace Fishare.UserService.Broker
             throw new NotImplementedException();
         }
 
-        public void Recieve(string operations, string payload)
+        public void Recieve(string operations, User payload)
         {
-            // received message  
-            User content = JsonConvert.DeserializeObject<User>(payload);
-
             var operation = operations.Split(".")[2];
             
             switch (operation)
             {
                 case "created":
-                    _userService.Create(content); 
+                    _userService.Create(payload); 
                     break;
                 case "deleted":
                     break;
