@@ -2357,34 +2357,21 @@
       "Fishare.UserService.BLL/1.0.0": {
         "dependencies": {
           "Fishare.UserService.DAL": "1.0.0",
-          "Newtonsoft.Json": "12.0.3"
-        },
-        "runtime": {
-          "Fishare.UserService.BLL.dll": {}
-        },
-        "compile": {
-          "Fishare.UserService.BLL.dll": {}
-        }
-      },
-      "Fishare.UserService.Broker/1.0.0": {
-        "dependencies": {
-          "Fishare.UserService.BLL": "1.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "3.1.3",
           "Microsoft.Extensions.ObjectPool": "3.1.3",
-          "Microsoft.Extensions.Options": "3.1.3",
+          "Newtonsoft.Json": "12.0.3",
           "RabbitMQ.Client": "6.0.0"
         },
         "runtime": {
-          "Fishare.UserService.Broker.dll": {}
+          "Fishare.UserService.BLL.dll": {}
         },
         "compile": {
-          "Fishare.UserService.Broker.dll": {}
+          "Fishare.UserService.BLL.dll": {}
         }
       },
       "Fishare.UserService.Composition/1.0.0": {
         "dependencies": {
           "Fishare.UserService.BLL": "1.0.0",
-          "Fishare.UserService.Broker": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.3",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.3"
         },
@@ -5204,11 +5191,6 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "Fishare.UserService.BLL/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Fishare.UserService.Broker/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

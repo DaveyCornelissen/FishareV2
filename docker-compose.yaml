@@ -79,7 +79,7 @@ services:
     image: fishare-userservice-i
     container_name: fishare-userservice
     build:
-      context: ./src/services/Fishare.UserService
+      context: ./src/services/Fishare.UserService/Fishare.UserService
       dockerfile: Dockerfile
     volumes:
       - .:/fishare-userservice

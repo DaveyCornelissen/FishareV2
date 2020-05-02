@@ -11,7 +11,6 @@
   "profiles": {
     "Fishare_UserService": {
       "commandName": "Project",
-      "launchBrowser": false,
       "launchUrl": "api/user",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
