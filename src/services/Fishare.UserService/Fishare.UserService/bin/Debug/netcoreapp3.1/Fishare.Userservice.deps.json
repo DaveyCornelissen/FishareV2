@@ -11,7 +11,7 @@
       "NETCOREAPP3_1"
     ],
     "languageVersion": "",
-    "platform": "",
+    "platform": "AnyCPU",
     "allowUnsafe": false,
     "warningsAsErrors": false,
     "optimize": false,

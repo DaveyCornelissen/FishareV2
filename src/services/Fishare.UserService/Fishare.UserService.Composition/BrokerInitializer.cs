@@ -1,6 +1,4 @@
 ﻿using Fishare.UserService.BBL.Broker;
-using Fishare.UserService.Broker;
-using Fishare.UserService.Broker.Interfaces;
 using Fishare.UserService.Composition.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,8 +31,15 @@ namespace Fishare.UserService.Composition
                     services.Configure<RabbitOptions>(x => configuration.GetSection("rabbit").Bind(x));
                     break;
                 case "Docker":
-
-                    services.Configure<RabbitOptions>(x => {x = rabbitOptions;});
+                    services.Configure<RabbitOptions>(x => {
+                        x.HostName = rabbitOptions.HostName;
+                        x.UserName = rabbitOptions.UserName;
+                        x.Password = rabbitOptions.Password;
+                        x.Port = rabbitOptions.Port;
+                        x.Queue = rabbitOptions.Queue;
+                        x.Exchange = rabbitOptions.Exchange;
+                        x.VHost = rabbitOptions.VHost;
+                    });
                     break;
                 case "Production":
                     services.Configure<RabbitOptions>(x => {x = rabbitOptions;});

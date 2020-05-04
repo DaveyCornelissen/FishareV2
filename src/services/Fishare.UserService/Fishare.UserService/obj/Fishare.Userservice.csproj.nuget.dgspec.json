@@ -101,8 +101,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userservice.BLL\\Fishare.UserService.BLL.csproj": {
-                "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.Userservice.BLL\\Fishare.UserService.BLL.csproj"
+              "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.BLL\\Fishare.UserService.BLL.csproj": {
+                "projectPath": "C:\\Users\\Davey\\Documents\\Software projecten\\FishareV2\\src\\services\\Fishare.UserService\\Fishare.UserService.BLL\\Fishare.UserService.BLL.csproj"
               }
             }
           }

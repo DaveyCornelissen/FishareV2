@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fishare.Userservice.BLL\Fishare.UserService.BLL.csproj" />
+    <ProjectReference Include="..\Fishare.UserService.BLL\Fishare.UserService.BLL.csproj" />
   </ItemGroup>
 
 </Project>

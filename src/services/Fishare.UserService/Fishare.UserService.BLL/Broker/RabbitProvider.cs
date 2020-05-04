@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
+using RabbitMQ.Client.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,16 +22,23 @@ namespace Fishare.UserService.BBL.Broker
 
         private IConnection GetConnection()
         {
-            var factory = new ConnectionFactory()
+            try
             {
-                HostName = _options.HostName,
-                Port = _options.Port,
-                UserName = _options.UserName,
-                Password = _options.Password,
-                VirtualHost = _options.VHost
-            };
+                var factory = new ConnectionFactory()
+                {
+                    HostName = _options.HostName,
+                    Port = _options.Port,
+                    UserName = _options.UserName,
+                    Password = _options.Password,
+                    VirtualHost = _options.VHost
+                };
 
-            return factory.CreateConnection();
+                return factory.CreateConnection();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public IModel Create()

@@ -9,7 +9,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 3000
+          "Port": 5010
         }
       ],
       "UpstreamPathTemplate": "/user/signIn",
@@ -21,7 +21,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 3000
+          "Port": 5010
         }
       ],
       "UpstreamPathTemplate": "/user/signUp",
@@ -33,7 +33,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5000
+          "Port": 5020
         }
       ],
       "UpstreamPathTemplate": "/user/{everything}",
