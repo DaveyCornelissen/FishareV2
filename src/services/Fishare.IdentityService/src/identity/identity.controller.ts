@@ -9,7 +9,7 @@ export class IdentityController {
     constructor(private IdentityService: IdentityService) {}
 
     @Post('approval')
-    async signIn(@Body() req : RegistrationDto) {
+    async signIn(@Body() req : IdentityDto) {
         return this.IdentityService.login(req);
     }
 

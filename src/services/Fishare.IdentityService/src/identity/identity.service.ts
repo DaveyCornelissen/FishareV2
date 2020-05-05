@@ -57,8 +57,8 @@ export class IdentityService implements OnApplicationBootstrap {
 
     const userEvent = new UserDTO(newIdentity.id, registration.email, registration.username, registration.country);
     console.log(userEvent);
-    //TODO need to send an event with the event broker
-
+   
+    //send user.created event to the rabbit queue
     this.client.emit<number>('user.queue.created', userEvent);
 
     return 'Account is succesfully created!';
