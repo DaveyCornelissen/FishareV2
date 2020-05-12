@@ -10,7 +10,7 @@ export class IdentityController {
 
     @Post('approval')
     async signIn(@Body() req : IdentityDto) {
-        return this.IdentityService.login(req);
+        return this.IdentityService.Login(req);
     }
 
     @Delete('removal/:id')

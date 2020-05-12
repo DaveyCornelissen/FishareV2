@@ -10,17 +10,17 @@ import { UserDTO } from 'src/shared/dto/user.dto';
 import { ClientProxy } from '@nestjs/microservices';
 
 @Injectable()
-export class IdentityService implements OnApplicationBootstrap {
+export class IdentityService {
 
   constructor(@InjectModel('Identity') private identityModel: Model<Identity>,
     private readonly jwtService: JwtService, private passwordService: PasswordService, @Inject('IDENTITY_SERVICE') private readonly client: ClientProxy) { }
 
 
-  async onApplicationBootstrap() {
-    await this.client.connect();
-  }
+  // async onApplicationBootstrap() {
+  //   await this.client.connect();
+  // }
 
-  async login(approval: IdentityDto): Promise<any> {
+  async Login(approval: IdentityDto): Promise<any> {
 
     const identityDb = await this.identityModel.findOne({ email: approval.email })
 

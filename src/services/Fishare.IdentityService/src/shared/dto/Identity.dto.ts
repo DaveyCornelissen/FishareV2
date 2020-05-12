@@ -1,9 +1,10 @@
-import { IsEmail, MinLength, IsString } from "class-validator";
+import { IsEmail, MinLength, IsString, IsLowercase } from "class-validator";
 import { Identity } from "src/identity/identity.interface";
 
 export class IdentityDto {
 
     @IsEmail()
+    @IsLowercase()
     email: string;
 
     @MinLength(8)
