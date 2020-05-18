@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "kubefish"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "kubefish"
+    spec:
+      containers:
+        - name: "kubefish"
+          image: "fishcontainer.azurecr.io/kubefish"
+          ports:
+          - containerPort: 80
