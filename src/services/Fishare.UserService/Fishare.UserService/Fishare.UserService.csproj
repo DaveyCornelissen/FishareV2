@@ -5,7 +5,13 @@
     <RootNamespace>Fishare.UserService</RootNamespace>
     <UserSecretsId>aa41c9c7-f083-4296-a91e-0a1dbc9b3c52</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileFile>..\Dockerfile</DockerfileFile>
     <AssemblyName>Fishare.UserService</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>2</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,10 +23,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fishare.UserService.BLL\Fishare.UserService.BLL.csproj" />
     <ProjectReference Include="..\Fishare.UserService.Composition\Fishare.UserService.Composition.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,4 @@
-﻿using Fishare.Userservice.BLL.Interfaces;
+﻿using Fishare.UserService.BLL.Interfaces;
 using Fishare.UserService.DAL;
 using Fishare.UserService.DAL.Repository;
 using Fishare.UserService.Model;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fishare.Userservice.BLL
+namespace Fishare.UserService.BLL
 {
     public class UserService : IUserService
     {

@@ -11,7 +11,6 @@
   "profiles": {
     "Fishare_UserService": {
       "commandName": "Project",
-      "launchBrowser": false,
       "launchUrl": "api/user",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
@@ -20,8 +19,17 @@
     },
     "Docker": {
       "commandName": "Docker",
-      "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/user",
+      "environmentVariables": {
+        "FISHARE_RBMQ_QUEUE": "user_queue",
+        "FISHARE_RBMQ_VHOST": "fishare_Vhost",
+        "FISHARE_RBMQ_PASSWORD": "password",
+        "FISHARE_RBMQ_HOSTNAME": "fishare-rabbitmq",
+        "FISHARE_RBMQ_EXCHANGE": "fishare.user.topic",
+        "FISHARE_RBMQ_USERNAME": "user",
+        "ASPNETCORE_ENVIRONMENT": "Docker",
+        "FISHARE_RBMQ_PORT": "5672"
+      },
       "publishAllPorts": true,
       "useSSL": true
     }

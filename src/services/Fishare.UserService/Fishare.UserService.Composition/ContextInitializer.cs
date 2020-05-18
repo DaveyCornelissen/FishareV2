@@ -1,11 +1,12 @@
 ﻿using Fishare.UserService.DAL;
-using Fishare.UserServices.Composition.Interfaces;
+using Fishare.UserService.Composition.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using Fishare.UserService.DAL.Repository;
 
-namespace Fishare.UserServices.Composition
+namespace Fishare.UserService.Composition
 {
     public class ContextInitializer : IInitializer
     {
@@ -13,6 +14,8 @@ namespace Fishare.UserServices.Composition
         {
             string stage = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
             string containerString = Environment.GetEnvironmentVariable("FISHARE_USERSERVICE_DB");
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             switch (stage)
             {

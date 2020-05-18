@@ -9,8 +9,8 @@ export class IdentityController {
     constructor(private IdentityService: IdentityService) {}
 
     @Post('approval')
-    async signIn(@Body() req : RegistrationDto) {
-        return this.IdentityService.login(req);
+    async signIn(@Body() req : IdentityDto) {
+        return this.IdentityService.Login(req);
     }
 
     @Delete('removal/:id')

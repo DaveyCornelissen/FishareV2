@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Fishare.UserServices.Composition.Interfaces
+namespace Fishare.UserService.Composition.Interfaces
 {
     public interface IInitializer
     {

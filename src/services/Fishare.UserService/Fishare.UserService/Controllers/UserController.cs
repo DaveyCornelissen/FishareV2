@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Fishare.UserService.Model;
-using Fishare.Userservice.BLL.Interfaces;
 using Fishare.UserService.DAL.Repository;
+using Fishare.UserService.BLL.Interfaces;
+using BLL = Fishare.UserService.BLL;
 
 namespace Fishare.UserService.Controllers
 {
@@ -17,7 +15,7 @@ namespace Fishare.UserService.Controllers
 
         public UserController(IUnitOfWork unitOfWork)
         {
-            _userService = new Userservice.BLL.UserService(unitOfWork);
+            _userService = new BLL.UserService(unitOfWork);
         }
 
         // GET: api/User/5

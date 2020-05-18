@@ -1,6 +1,25 @@
 version: "3.7"
 
 services:
+
+  fishare-rabbitmq-container:
+    image: rabbitmq:3.8.3-management
+    container_name: fishare-rabbitmq
+    hostname: rabbithost
+    environment: 
+      RABBITMQ_ERLANG_COOKIE: FishyCookie
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+      RABBITMQ_DEFAULT_VHOST: fishare_Vhost
+    labels:
+      NAME: "rabbitmq"
+    volumes:
+      - "RabbitMQ-host=/etc/rabbitmq/enabled_plugins"
+      - "RabbitMQ-host:/var/lib/rabbitmq"
+    ports: 
+      - 5672:5672
+      - 15672:15672
+
   fishare-angular-webapp:
     image: fishare-angular-webapp-i
     container_name: fishare-angular-webapp
@@ -40,8 +59,18 @@ services:
       FLASK_ENV: development
       APP_PORT: '6000'
       FISHARE_IDENTITYSERVICE_DB: "mongodb://admin:admin12345@fishare-identitycontext:27017/identity?authSource=identity"
+      FISHARE_RBMQ_HOSTNAME: fishare-rabbitmq
+      FISHARE_RBMQ_USERNAME: user
+      FISHARE_RBMQ_PASSWORD: password
+      FISHARE_RBMQ_VHOST: fishare_Vhost
+      FISHARE_RBMQ_QUEUE: user.queue
+      FISHARE_RBMQ_EXCHANGE: fishare.user.topic
+      FISHARE_RBMQ_PORT: 5672
+    depends_on:
+      - fishare-rabbitmq-container
+    restart: on-failure
     ports:
-      - "3000:6000"
+      - "5010:6000"
   
   fishare-usercontext-container:
     image: mcr.microsoft.com/mssql/server:2019-latest
@@ -67,8 +96,18 @@ services:
     environment:
         ASPNETCORE_ENVIRONMENT: Docker
         FISHARE_USERSERVICE_DB: "Server=fishare-usercontext;Database=FUSDB;User Id=SA;Password=Toor12345;"
+        FISHARE_RBMQ_HOSTNAME: fishare-rabbitmq
+        FISHARE_RBMQ_USERNAME: user
+        FISHARE_RBMQ_PASSWORD: password
+        FISHARE_RBMQ_VHOST: fishare_Vhost
+        FISHARE_RBMQ_QUEUE: user.queue
+        FISHARE_RBMQ_EXCHANGE: fishare.user.topic
+        FISHARE_RBMQ_PORT: 5672
+    depends_on:
+      - fishare-rabbitmq-container
+    restart: on-failure
     ports:
-      - "5000:5000"
+      - "5020:5000"
 
 volumes: 
   MongoDB-Auth:
@@ -76,3 +115,5 @@ volumes:
     name: "Identityservice-database"
   MSSQLDB-User:
     name: "Userservice-MSSQL"
+  RabbitMQ-host:
+    name: "RabbitMQ-volume"
