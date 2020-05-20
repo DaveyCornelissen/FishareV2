@@ -19,9 +19,9 @@ export class JwtService {
     if (token == null) {
       throw new ErrorEvent('Token is not provided');
     }
-
-    const encryptToken = token.split(' ')[1];
-    localStorage.setItem('Token', encryptToken);
+    console.log(token);
+    // const encryptToken = token.split(' ')[1];
+    localStorage.setItem('Token', token);
     this.AuthenticationSubject.next(this.isAuthorized());
   }
 
