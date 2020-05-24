@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PasswordService } from '../../src/core/services/password/password.service';
+import { PasswordService } from 'src/core/services/password/password.service';
 import { BadRequestException } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 

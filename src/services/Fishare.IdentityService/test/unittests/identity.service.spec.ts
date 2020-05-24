@@ -1,6 +1,6 @@
 
 import { Test } from "@nestjs/testing";
-import { IdentityService } from "../../src/identity/identity.service";
+import { IdentityService } from "src/identity/identity.service";
 import { PasswordService } from "src/core/services/password/password.service";
 
 describe("Identity Service", () => {
