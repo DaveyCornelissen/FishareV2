@@ -22,7 +22,7 @@ variables:
 
 stages:
 - stage: Build
-  displayName: Build and Analyze
+  displayName: Build Docker Container
   jobs:
   - job: Build
     displayName: Build
@@ -31,10 +31,34 @@ stages:
     steps:        
       - task: Docker@2
         inputs:
+          repository: '$(imageRepository)'
+          command: 'build'
+          Dockerfile: '$(solutionPath)/Dockerfile'
+
+- stage: Testing
+  displayName: Testing NodeJS
+  jobs:
+    - job: Test
+      displayName: Unittest
+      steps:
+        - task: unit testing
+          inputs:
+            - script: npm test
+              target:
+
+
+
+- stage: Publish
+  displayName: Publish Docker Image
+  jobs:
+  - job: Publish
+    displayName: Publish
+    steps:        
+      - task: Docker@2
+        inputs:
           containerRegistry: '$(dockerRegistryServiceConnection)'
           repository: '$(imageRepository)'
-          command: 'buildAndPush'
-          Dockerfile: '$(solutionPath)/Dockerfile'
+          command: 'push'
           tags: |
             $(tag)
             latest

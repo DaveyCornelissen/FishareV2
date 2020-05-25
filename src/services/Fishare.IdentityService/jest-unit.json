@@ -16,5 +16,6 @@
   "modulePaths": [
     "<rootDir>"
   ],
-  "moduleDirectories": ["node_modules", "src"]
+  "moduleDirectories": ["node_modules", "src"],
+  "reporters": [ "default", "jest-junit" ]
 }

@@ -36,6 +36,7 @@
     "bcrypt": "^4.0.1",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.11.0",
+    "jest-junit": "^10.0.0",
     "mongodb": "^3.5.4",
     "mongoose": "^5.9.4",
     "passport": "^0.4.1",

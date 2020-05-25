@@ -22,4 +22,13 @@ export class RegistrationDto {
 
     @IsString()
     country: string;
+
+    constructor(email: string, username: string, password: string, confirmPassword: string, country: string) {
+        this.email = email,
+        this.username = username,
+        this.password = password,
+        this.confirmPassword = confirmPassword,
+        this.country = country
+    }
+
 }
