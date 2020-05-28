@@ -48,7 +48,8 @@ stages:
         condition: succeededOrFailed()
         inputs:
           testRunner: JUnit
-          testResultsFiles: '$(solutionPath)/TEST-RESULTS.xml'
+          searchFolder: $(solutionPath)
+          testResultsFiles: '**/TEST-RESULTS.xml'
 
 - stage: Build_Publish_Docker
   displayName: Build and Publish Docker file
