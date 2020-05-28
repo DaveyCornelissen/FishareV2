@@ -43,7 +43,9 @@ stages:
       pool:
         vmImage: $(vmImageName)
       steps:
-      - script: cd $(solutionPath)
+      - task: NodeTool@0 
+        inputs:
+          checkLatest: true
       - script: npm install
       - script: npm test
       - task: PublishTestResults@2
