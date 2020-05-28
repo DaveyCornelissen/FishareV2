@@ -15,7 +15,7 @@ export class AuthService {
 
   signIn(model: User) {
     return this.http.post<ResponseHandler>(`${environment.base + environment.endpoint.signIn}`, model).pipe(map(res => {
-      this.jwtService.storeToken(res.message);
+      this.jwtService.storeToken(res.data.access_token);
     }));
   }
 

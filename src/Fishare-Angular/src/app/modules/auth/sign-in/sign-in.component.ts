@@ -37,7 +37,7 @@ export class SignInComponent implements OnInit {
 
     this.authService.signIn(this.User.deserialize(this.signInForm.value)).subscribe(
       () => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/posts/timeline']);
       });
   }
 

@@ -2,7 +2,7 @@
 export class ResponseHandler {
     timestamp: Date;
     status: number;
-    message: any;
+    data: any;
     path: string;
 
     deserialize(input: any): this {

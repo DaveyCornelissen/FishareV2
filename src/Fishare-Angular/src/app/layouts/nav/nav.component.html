@@ -1,27 +1,53 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+  <!-- <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)" fxHide fxShow.xs>
     <mat-toolbar>Menu</mat-toolbar>
-    <!-- <mat-nav-list> -->
-      <!-- <div *ngFor="let route of routing | async">
+    <mat-nav-list>
+     <div *ngFor="let route of routing | async">
         <a *ngIf="!(route.name === 'SignOut')" mat-list-item routerLink="{{route.routerLink}}"
           routerLinkActive="router-link-active">{{route.name}}</a>
         <a *ngIf="route.name === 'SignOut'" mat-list-item (click)="onSignOut()">{{route.name}}</a>
       </div> -->
 
     <!-- </mat-nav-list> -->
-  </mat-sidenav>
+  <!-- </mat-sidenav> --> -->
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+      <!-- <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
+      </button> -->
       <div fxflex fxLayout="row" fxLayoutAlign="center center">
+        <img src="../../../assets/fishare-logo/fishare.png" class="fishareLogo">
         <span>Fishare</span>
       </div>
-      <div fxFlex fxLayoutAlign="end" fxLayout="row" fxLayoutGap="10px" fxShow fxHide.xs>
+      <div fxFlex fxLayoutAlign="end" fxLayout="row" fxLayoutGap="10px" >
+
+        <button mat-icon-button color="accent">
+          <mat-icon>home</mat-icon>
+        </button>
+
+        <button mat-icon-button color="accent">
+          <mat-icon>explore</mat-icon>
+        </button>
+
+        <button mat-icon-button color="accent">
+          <mat-icon>map</mat-icon>
+        </button>
+
+        <button mat-icon-button color="accent" [matMenuTriggerFor]="userMenu">
+          <mat-icon>account_circle</mat-icon>
+
+        </button>
+
+        <mat-menu #userMenu="matMenu">
+          <button mat-menu-item><mat-icon>account_box</mat-icon>profile</button>
+          <button mat-menu-item><mat-icon>settings</mat-icon>Settings</button>
+          <button mat-menu-item (click)="logout()"><mat-icon>exit_to_app</mat-icon> Logout</button>
+        </mat-menu>
+        
+
         <!-- <div *ngFor="let route of routing | async">
           <button *ngIf="!(route.name === 'SignOut')" mat-button routerLink="{{route.routerLink}}"
             routerLinkActive="router-link-active">{{route.name}}</button>

@@ -9,6 +9,7 @@ export class IdentityController {
     constructor(private IdentityService: IdentityService) {}
 
     @Post('approval')
+    @UsePipes(new ValidationPipe())
     async signIn(@Body() req : IdentityDto) {
         return this.IdentityService.Login(req);
     }

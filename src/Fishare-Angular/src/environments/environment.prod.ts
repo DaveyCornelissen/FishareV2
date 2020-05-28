@@ -2,7 +2,7 @@ export const environment = {
   production: true,
   base: 'http://localhost:5000',
   endpoint: {
-    signIn: '/user/singIn',
+    signIn: '/user/signIn',
     signUp: '/user/signUp',
   },
   crud: {
