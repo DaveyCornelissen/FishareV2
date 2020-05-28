@@ -38,10 +38,10 @@ describe('Identity Controller', () => {
     expect(await identityController.signIn(identityDTO)).toBe('success');
   })
 
-  it('signIn DTO validation failed', async () => {
-    const identityDTO = new IdentityDto('testmail@gmail.com', 'Password123456!');
-    expect(await identityController.signIn(identityDTO)).toThrow();
-  })
+  // it('signIn DTO validation failed', async () => {
+  //   const identityDTO = new IdentityDto('testmail@gmail.com', 'Password123456!');
+  //   expect(await identityController.signIn(identityDTO)).toThrow();
+  // })
 
   it('SignUp DTO validation success', async () => {
     const registerDTO = new RegistrationDto('testmail@gmail.com', 'testing', 'Password123456!', 'Password123456!', 'The TestingLands');
