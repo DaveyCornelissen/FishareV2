@@ -41,6 +41,7 @@ stages:
 
       - script: npm test
         displayName: Jest run Unittests
+        workingDirectory: $(solutionPath)
 
       - task: PublishTestResults@2
         condition: succeededOrFailed()
