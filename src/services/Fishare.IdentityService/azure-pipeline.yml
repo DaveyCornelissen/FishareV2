@@ -44,9 +44,6 @@ stages:
         - task: unit testing
           inputs:
             - script: npm test
-              target:
-
-
 
 - stage: Publish
   displayName: Publish Docker Image
