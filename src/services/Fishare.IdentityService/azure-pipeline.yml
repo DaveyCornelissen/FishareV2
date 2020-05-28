@@ -51,6 +51,11 @@ stages:
           workingDir: $(solutionPath)
           command: install
 
+      - task: Npm@1
+        inputs:
+          workingDir: $(solutionPath)
+          customCommand: npm test
+
       - task: PublishTestResults@2
         condition: succeededOrFailed()
         inputs:
