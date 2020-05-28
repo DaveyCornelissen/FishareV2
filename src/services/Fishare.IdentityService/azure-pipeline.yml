@@ -21,49 +21,38 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
-- stage: Build
-  displayName: Build Docker Container
+- stage: Build & Analyze
+  displayName: Build & Analyze Project
   jobs:
   - job: Build
     displayName: Build
     pool:
       vmImage: $(vmImageName)
     steps:        
-      - task: Docker@2
-        inputs:
-          repository: '$(imageRepository)'
-          command: 'build'
-          Dockerfile: '$(solutionPath)/Dockerfile'
-
-- stage: Testing
-  displayName: Testing Idenityservice
-  jobs:
-    - job: Test
-      displayName: Unittest
-      pool:
-        vmImage: $(vmImageName)
-      steps:
-      - task: NodeTool@0 
+      - task: NodeTool@0
+        displayName: Install NodeJS
         inputs:
           checkLatest: true
       - task: Npm@1
+        displayName: NPM install project
         inputs:
           workingDir: $(solutionPath)
           command: install
 
       - script: npm test
-
+        displayName: Jest run Unittests
+        
       - task: PublishTestResults@2
         condition: succeededOrFailed()
         inputs:
           testRunner: JUnit
           testResultsFiles: '**/TEST-RESULTS.xml'
 
-- stage: Publish
-  displayName: Publish Docker Image
+- stage: Build & Publish Docker
+  displayName: Build & Publish Docker file
   jobs:
-  - job: Publish
-    displayName: Publish
+  - job: ReleaseDocker
+    displayName: Build & Publish
     pool:
       vmImage: $(vmImageName)
     steps:        
@@ -71,7 +60,8 @@ stages:
         inputs:
           containerRegistry: '$(dockerRegistryServiceConnection)'
           repository: '$(imageRepository)'
-          command: 'push'
+          command: 'buildAndPush'
+          Dockerfile: '$(solutionPath)/Dockerfile'
           tags: |
             $(tag)
             latest
