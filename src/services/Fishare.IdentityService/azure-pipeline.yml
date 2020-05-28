@@ -21,7 +21,7 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
-- stage: Build-Analyze
+- stage: Build_Analyze
   displayName: Build and Analyze Project
   jobs:
   - job: Build
@@ -48,7 +48,7 @@ stages:
           testRunner: JUnit
           testResultsFiles: '**/TEST-RESULTS.xml'
 
-- stage: Build/Publish-Docker
+- stage: Build_Publish_Docker
   displayName: Build and Publish Docker file
   jobs:
   - job: ReleaseDocker
