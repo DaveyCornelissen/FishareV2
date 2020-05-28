@@ -40,6 +40,8 @@ stages:
   jobs:
     - job: Test
       displayName: Unittest
+      pool:
+        vmImage: $(vmImageName)
       steps:
       - script: npm install
       - script: npm test
