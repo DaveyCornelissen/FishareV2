@@ -49,7 +49,7 @@ stages:
         inputs:
           testRunner: JUnit
           searchFolder: $(solutionPath)
-          testResultsFiles: '**/TEST-RESULTS.xml'
+          testResultsFiles: '**/junit.xml'
 
 - stage: Build_Publish_Docker
   displayName: Build and Publish Docker file
