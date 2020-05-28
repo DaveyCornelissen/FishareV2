@@ -21,7 +21,7 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
-- stage: Build/Analyze
+- stage: Build-Analyze
   displayName: Build and Analyze Project
   jobs:
   - job: Build
