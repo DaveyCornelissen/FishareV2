@@ -46,8 +46,11 @@ stages:
       - task: NodeTool@0 
         inputs:
           checkLatest: true
-      - script: npm install
-      - script: npm test
+      - task: Npm@1
+        inputs:
+          workingDir: $(solutionPath)
+          command: install
+
       - task: PublishTestResults@2
         condition: succeededOrFailed()
         inputs:
