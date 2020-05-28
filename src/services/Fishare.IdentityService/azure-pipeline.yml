@@ -67,6 +67,8 @@ stages:
   jobs:
   - job: Publish
     displayName: Publish
+    pool:
+      vmImage: $(vmImageName)
     steps:        
       - task: Docker@2
         inputs:
