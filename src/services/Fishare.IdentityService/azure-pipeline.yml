@@ -36,14 +36,18 @@ stages:
           Dockerfile: '$(solutionPath)/Dockerfile'
 
 - stage: Testing
-  displayName: Testing NodeJS
+  displayName: Testing Idenityservice
   jobs:
     - job: Test
       displayName: Unittest
       steps:
-        - task: unit testing
-          inputs:
-            - script: npm test
+      - script: npm install
+      - script: npm test
+      - task: PublishTestResults@2
+        condition: succeededOrFailed()
+        inputs:
+          testRunner: JUnit
+          testResultsFiles: '**/TEST-RESULTS.xml'
 
 - stage: Publish
   displayName: Publish Docker Image
