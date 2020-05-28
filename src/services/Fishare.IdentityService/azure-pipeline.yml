@@ -21,8 +21,8 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
-- stage: Build & Analyze
-  displayName: Build & Analyze Project
+- stage: Build and Analyze
+  displayName: Build and Analyze Project
   jobs:
   - job: Build
     displayName: Build
@@ -41,18 +41,18 @@ stages:
 
       - script: npm test
         displayName: Jest run Unittests
-        
+
       - task: PublishTestResults@2
         condition: succeededOrFailed()
         inputs:
           testRunner: JUnit
           testResultsFiles: '**/TEST-RESULTS.xml'
 
-- stage: Build & Publish Docker
-  displayName: Build & Publish Docker file
+- stage: Build and Publish Docker
+  displayName: Build and Publish Docker file
   jobs:
   - job: ReleaseDocker
-    displayName: Build & Publish
+    displayName: Build and Publish
     pool:
       vmImage: $(vmImageName)
     steps:        
