@@ -21,35 +21,35 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
-- stage: Build_Analyze
-  displayName: Build and Analyze Project
-  jobs:
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: $(vmImageName)
-    steps:        
-      - task: NodeTool@0
-        displayName: Install Dependencies
-        inputs:
-          versionSpec: 12.x
-          checkLatest: true
-      - task: Npm@1
-        displayName: install project
-        inputs:
-          workingDir: $(solutionPath)
-          command: install
+# - stage: Build_Analyze
+#   displayName: Build and Analyze Project
+#   jobs:
+#   - job: Build
+#     displayName: Build
+#     pool:
+#       vmImage: $(vmImageName)
+#     steps:        
+#       - task: NodeTool@0
+#         displayName: Install Dependencies
+#         inputs:
+#           versionSpec: 12.x
+#           checkLatest: true
+#       - task: Npm@1
+#         displayName: install project
+#         inputs:
+#           workingDir: $(solutionPath)
+#           command: install
 
-      # - script: npm test
-      #   displayName: Jest run Unittests
-      #   workingDirectory: $(solutionPath)
+#       # - script: npm test
+#       #   displayName: Jest run Unittests
+#       #   workingDirectory: $(solutionPath)
 
-      - task: PublishTestResults@2
-        condition: succeededOrFailed()
-        inputs:
-          testRunner: JUnit
-          searchFolder: $(solutionPath)
-          testResultsFiles: '**/junit.xml'
+#       - task: PublishTestResults@2
+#         condition: succeededOrFailed()
+#         inputs:
+#           testRunner: JUnit
+#           searchFolder: $(solutionPath)
+#           testResultsFiles: '**/junit.xml'
 
 - stage: Code_Quality
   displayName: Static Code Quality
@@ -65,9 +65,10 @@ stages:
           organization: 'fishare-identityservice'
           scannerMode: 'CLI'
           configMode: 'manual'
-          cliProjectKey: 'IdenityService'
-          cliProjectName: 'IdenityService'
-          cliSources: '$(solutionPath)'
+          cliProjectKey: 'IdentityService'
+          cliProjectName: 'IdentityService'
+          cliSources: 'src/services/Fishare.IdentityService'
+
       - task: NodeTool@0
         displayName: Install Dependencies
         inputs:
