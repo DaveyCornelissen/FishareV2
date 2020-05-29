@@ -2,9 +2,9 @@ trigger:
     paths:
       include:
         - src/services/Fishare.IdentityService/*
-    branches:
-      include:
-        - master
+    # branches:
+    #   include:
+    #     - master
   
 resources:
 - repo: self
@@ -30,12 +30,12 @@ stages:
       vmImage: $(vmImageName)
     steps:        
       - task: NodeTool@0
-        displayName: Install NodeJS
+        displayName: Install Dependencies
         inputs:
           versionSpec: 12.x
           checkLatest: true
       - task: Npm@1
-        displayName: NPM install project
+        displayName: install project
         inputs:
           workingDir: $(solutionPath)
           command: install
@@ -66,6 +66,17 @@ stages:
           scannerMode: 'MSBuild'
           projectKey: 'IdenityService'
           projectName: 'IdentityService'
+
+      - task: NodeTool@0
+        displayName: Install Dependencies
+        inputs:
+          versionSpec: 12.x
+          checkLatest: true
+      - task: Npm@1
+        displayName: install project
+        inputs:
+          workingDir: $(solutionPath)
+          command: install
       - task: SonarCloudAnalyze@1
       - task: SonarCloudPublish@1
         inputs:
