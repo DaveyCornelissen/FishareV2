@@ -65,9 +65,9 @@ stages:
           organization: 'fishare-identityservice'
           scannerMode: 'CLI'
           configMode: 'manual'
-          cliProjectKey: 'IdentityService'
-          cliProjectName: 'IdentityService'
-          cliSources: 'src/services/Fishare.IdentityService'
+          cliProjectKey: 'Identity-Service'
+          cliProjectName: 'Identity-Service'
+          cliSources: '.'
 
       - task: NodeTool@0
         displayName: Install Dependencies
