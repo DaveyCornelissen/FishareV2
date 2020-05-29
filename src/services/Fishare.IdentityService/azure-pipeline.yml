@@ -66,6 +66,7 @@ stages:
           scannerMode: 'MSBuild'
           projectKey: 'IdenityService'
           projectName: 'IdentityService'
+          cliSources: 'src/services/Fishare.IdentityService'
       - task: SonarCloudAnalyze@1
       - task: SonarCloudPublish@1
         inputs:
