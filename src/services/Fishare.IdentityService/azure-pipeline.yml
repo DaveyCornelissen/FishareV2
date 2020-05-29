@@ -63,10 +63,11 @@ stages:
         inputs:
           SonarCloud: 'SonarCloud'
           organization: 'fishare-identityservice'
-          scannerMode: 'MSBuild'
-          projectKey: 'IdenityService'
-          projectName: 'IdentityService'
-
+          scannerMode: 'CLI'
+          configMode: 'manual'
+          cliProjectKey: 'IdenityService'
+          cliProjectName: 'IdenityService'
+          cliSources: '$(solutionPath)'
       - task: NodeTool@0
         displayName: Install Dependencies
         inputs:
