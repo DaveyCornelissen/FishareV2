@@ -1,7 +1,7 @@
 trigger:
     paths:
       include:
-        - services/Fishare-IdentityService/*
+        - src/services/Fishare.IdentityService/*
     branches:
       include:
         - master
@@ -12,7 +12,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'dcornelissen DockerHub'
-  imageRepository: 'dcornelissen/Fishare-Identityservice'
+  imageRepository: 'dcornelissen/Fishare.Identityservice'
   tag: '$(Build.BuildId)'
   solutionPath: 'src/services/Fishare.IdentityService'
   projectPath: '$(solutionPath)'
@@ -32,6 +32,7 @@ stages:
       - task: NodeTool@0
         displayName: Install NodeJS
         inputs:
+          versionSpec: 12.x
           checkLatest: true
       - task: Npm@1
         displayName: NPM install project
@@ -47,7 +48,29 @@ stages:
         condition: succeededOrFailed()
         inputs:
           testRunner: JUnit
-          testResultsFiles: '**/TEST-RESULTS.xml'
+          searchFolder: $(solutionPath)
+          testResultsFiles: '**/junit.xml'
+
+- stage: Code_Quality
+  displayName: Static Code Quality
+  jobs:
+  - job: CodeQuality
+    displayName: SonarCloud Static Code Quality
+    pool:
+      vmImage: $(vmImageName)
+    steps:            
+      - task: SonarCloudPrepare@1
+        inputs:
+          SonarCloud: 'SonarCloud'
+          organization: 'fishare-identityservice'
+          scannerMode: 'MSBuild'
+          projectKey: 'IdenityService'
+          projectName: 'IdentityService'
+      - task: SonarCloudAnalyze@1
+      - task: SonarCloudPublish@1
+        inputs:
+          pollingTimeoutSec: '300'
+
 
 - stage: Build_Publish_Docker
   displayName: Build and Publish Docker file
