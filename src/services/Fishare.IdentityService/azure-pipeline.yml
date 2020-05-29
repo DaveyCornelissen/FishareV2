@@ -2,9 +2,9 @@ trigger:
     paths:
       include:
         - src/services/Fishare.IdentityService/*
-    branches:
-      include:
-        - master
+    # branches:
+    #   include:
+    #     - master
   
 resources:
 - repo: self
