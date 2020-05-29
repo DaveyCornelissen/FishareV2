@@ -51,6 +51,26 @@ stages:
           searchFolder: $(solutionPath)
           testResultsFiles: '**/junit.xml'
 
+- stage: Code_Quality
+  displayName: Static Code Quality
+  jobs:
+  - job: CodeQuality
+    displayName: SonarCloud Static Code Quality
+    pool:
+      vmImage: $(vmImageName)
+    steps:            
+      - task: SonarCloudPrepare@1
+        inputs:
+          SonarCloud: 'SonarCloud'
+          organization: 'fishare-identityservice'
+          scannerMode: 'MSBuild'
+          projectKey: 'IdenityService'
+          projectName: 'IdentityService'
+      - task: SonarCloudAnalyze@1
+      - task: SonarCloudPublish@1
+        inputs:
+          pollingTimeoutSec: '300'
+
 - stage: Build_Publish_Docker
   displayName: Build and Publish Docker file
   jobs:
