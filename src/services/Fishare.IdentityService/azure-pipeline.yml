@@ -60,7 +60,6 @@ stages:
       vmImage: $(vmImageName)
     steps:            
       
-
       - task: NodeTool@0
         displayName: Install Dependencies
         inputs:
@@ -71,16 +70,12 @@ stages:
         inputs:
           workingDir: $(solutionPath)
           command: install
-
       - task: SonarCloudPrepare@1
         inputs:
           SonarCloud: 'SonarCloud'
           organization: 'fishare-identityservice'
           scannerMode: 'CLI'
-          configMode: 'manual'
-          cliProjectKey: 'Identity-Service'
-          cliProjectName: 'Identity-Service'
-          cliSources: $(solutionPath)
+          configMode: 'file'
       - task: SonarCloudAnalyze@1
       - task: SonarCloudPublish@1
         inputs:
