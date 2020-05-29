@@ -10,7 +10,7 @@ variables:
   buildConfiguration: 'Release'
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'dcornelissen DockerHub'
-  imageRepository: 'dcornelissen/Fishare-Userservice'
+  imageRepository: 'dcornelissen/Fishare.Userservice'
   tag: '$(Build.BuildId)'
   solutionPath: 'src/services/Fishare.UserService'
   projectPath: '$(solutionPath)'
