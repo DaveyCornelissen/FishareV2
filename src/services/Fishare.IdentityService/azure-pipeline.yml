@@ -71,7 +71,6 @@ stages:
         inputs:
           pollingTimeoutSec: '300'
 
-
 - stage: Build_Publish_Docker
   displayName: Build and Publish Docker file
   jobs:
