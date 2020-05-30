@@ -5,7 +5,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '**/*.sln'
+  
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   # Container registry service connection established during pipeline creation
@@ -14,6 +14,7 @@ variables:
   tag: '$(Build.BuildId)'
   solutionPath: 'src/services/Fishare.UserService'
   projectPath: '$(solutionPath)'
+  solution: '$(solutionPath)/*.sln'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -27,9 +28,8 @@ steps:
     SonarCloud: 'SonarCloud'
     organization: 'fishare-userservice'
     scannerMode: 'MSBuild'
-    projectKey: 'Fishare-UserService'
-    projectName: 'Fishare-UserService'
-
+    projectKey: 'User-Service'
+    projectName: 'User-Service'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
