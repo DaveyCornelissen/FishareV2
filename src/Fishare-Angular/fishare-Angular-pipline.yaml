@@ -2,9 +2,9 @@ trigger:
     paths:
       include:
         - src/Fishare-Angular*
-    # branches:
-    #   include:
-    #     - master
+    branches:
+      include:
+        - master
   
 resources:
 - repo: self
@@ -19,8 +19,28 @@ variables:
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
-
 stages:
+
+- stage: Code_Quality
+  displayName: Static Code Quality
+  jobs:
+  - job: CodeQuality
+    displayName: SonarCloud Static Code Quality
+    pool:
+      vmImage: $(vmImageName)
+    steps:            
+      - task: SonarCloudPrepare@1
+        inputs:
+          SonarCloud: 'SonarCloud'
+          organization: 'fishare-angular'
+          scannerMode: 'CLI'
+          configMode: 'file'
+          configFile: '$(solutionPath)/sonar-project.properties'
+      - task: SonarCloudAnalyze@1
+      - task: SonarCloudPublish@1
+        inputs:
+          pollingTimeoutSec: '300'
+
 - stage: Build
   displayName: Build and Analyze
   jobs:
