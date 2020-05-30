@@ -77,6 +77,7 @@ stages:
           scannerMode: 'CLI'
           configMode: 'file'
           configFile: '$(solutionPath)/sonar-project.properties'
+
       - task: SonarCloudAnalyze@1
       - task: SonarCloudPublish@1
         inputs:
