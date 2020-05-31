@@ -15,7 +15,7 @@ variables:
   imageRepository: 'dcornelissen/Fishare-Angular'
   tag: '$(Build.BuildId)'
   solutionPath: 'src/Fishare-Angular'
-  projectPath: '$(solutionPath)'
+  manifestPath: 'common\deployment\Angular'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -68,3 +68,18 @@ stages:
           tags: |
             $(tag)
             latest
+
+- stage: Release_K8_Cluster
+  displayName: Release to K8 cluster
+  jobs:
+  - job: Deploy
+    displayName: Deployment
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - task: KubernetesManifest@0
+      displayName: Deploy
+      inputs:
+        kubernetesServiceConnection: Kubernetes Connection
+        namespace: default
+        manifests: $(manifestPath)/deployment.yml|$(manifestPath)/service.yml
