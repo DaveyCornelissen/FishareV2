@@ -15,7 +15,7 @@ variables:
   imageRepository: 'dcornelissen/Fishare-Angular'
   tag: '$(Build.BuildId)'
   solutionPath: 'src/Fishare-Angular'
-  manifestPath: 'common\deployment\Angular'
+  manifestPath: 'common/deployment/Angular'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
