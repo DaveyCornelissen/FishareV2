@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-deployment
+  labels:
+    app: fishare-angular
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fishare-angular
+  template:
+    metadata:
+      labels:
+        app: fishare-angular
+    spec:
+      containers:
+      - name: fishare-angualer-container
+        image: dcornelissen/fishare-angular
+        ports:
+        - containerPort: 8080

@@ -1,0 +1,30 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: fishare.broker
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fishare.broker
+  template:
+    metadata:
+      labels:
+        app: fishare.broker
+    spec:
+      containers:
+        - name: fishare-rabbitmq
+          image: rabbitmq:3.8.3-management
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5672
+            - containerPort: 15672
+          env:
+            - name: RABBITMQ_ERLANG_COOKIE
+              value: FishyCookie
+            - name: RABBITMQ_DEFAULT_USER
+              value: user
+            - name: RABBITMQ_DEFAULT_PASS
+              value: password
+            - name: RABBITMQ_DEFAULT_VHOST
+              value: fishare_Vhost
