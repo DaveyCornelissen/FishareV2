@@ -82,4 +82,4 @@ stages:
       inputs:
         kubernetesServiceConnection: Kubernetes Connection
         namespace: default
-        manifests: $(manifestPath)/deployment.yml|$(manifestPath)/service.yml
+        manifests: $(manifestPath)/deployment.yaml|$(manifestPath)/service.yaml
