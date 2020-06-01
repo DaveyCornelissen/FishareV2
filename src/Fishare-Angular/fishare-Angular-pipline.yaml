@@ -78,9 +78,9 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-    - task: KubernetesManifest@0
+    - task: Kubernetes@1
       displayName: Deploy
       inputs:
-        kubernetesServiceConnection: Kubernetes Connection
-        namespace: default
-        manifests: $(manifestPath)/deployment.yaml|$(manifestPath)/service.yaml
+        kubernetesServiceEndpoint: Kubernetes Connection
+        command: apply
+        arguments: -f $(manifestPath)/deployment.yaml
