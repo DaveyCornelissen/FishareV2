@@ -1,21 +1,30 @@
-apiVersion : apps/v1beta1
+apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: fishare.broker
+  name: fishare-rabbitmq-deployment
+  labels:
+    broker: fishare-rabbitmq
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: fishare.broker
+      app: fishare-rabbitmq
   template:
     metadata:
       labels:
-        app: fishare.broker
+        app: fishare-rabbitmq
     spec:
+      volumes:
+      - name: rabbitmq-pvc-storage
+        persistentVolumeClaim:
+          claimName: rabbitmq-pvc
       containers:
         - name: fishare-rabbitmq
           image: rabbitmq:3.8.3-management
           imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: /var/lib/rabbitmq
+              name: rabbitmq-pvc-storage
           ports:
             - containerPort: 5672
             - containerPort: 15672

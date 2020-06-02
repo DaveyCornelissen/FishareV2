@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: identity-deployment
+  labels:
+    app: fishare-identityservice
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fishare-identityservice
+  template:
+    metadata:
+      labels:
+        app: fishare-identityservice
+    spec:
+      containers:
+      - name: fishare-identityservice-container
+        image: dcornelissen/fishare.identityservice
+        ports:
+        - containerPort: 6000
+        env:
+          - name: FISHARE_IDENTITYSERVICE_DB
+            value: "mongodb+srv://FishyRoot:Fishy21!@identitycluster-gbgy0.azure.mongodb.net/identity?retryWrites=true&w=majority"
+          - name: FISHARE_RBMQ_HOSTNAME
+            value: fishare-rabbitmq
+          - name: FISHARE_RBMQ_USERNAME
+            value: user
+          - name: FISHARE_RBMQ_PASSWORD
+            value: password
+          - name: FISHARE_RBMQ_VHOST
+            value: fishare_Vhost
+          - name: FISHARE_RBMQ_QUEUE
+            value: user.queue
+          - name: FISHARE_RBMQ_EXCHANGE
+            value: fishare.user.topic
+          - name: FISHARE_RBMQ_PORT
+            value: 5672
