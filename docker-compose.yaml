@@ -108,7 +108,7 @@ services:
       - fishare-rabbitmq-container
     restart: on-failure
     ports:
-      - "5020:5000"
+      - "5020:80"
 
 volumes: 
   MongoDB-Auth:
