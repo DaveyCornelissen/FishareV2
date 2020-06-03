@@ -41,9 +41,6 @@ namespace Fishare.UserService.Composition
                         x.VHost = rabbitOptions.VHost;
                     });
                     break;
-                case "Production":
-                    services.Configure<RabbitOptions>(x => {x = rabbitOptions;});
-                    break;
                 default:
                     break;
             }

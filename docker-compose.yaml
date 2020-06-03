@@ -58,7 +58,7 @@ services:
     environment:
       FLASK_ENV: development
       APP_PORT: '6000'
-      FISHARE_IDENTITYSERVICE_DB: "mongodb://admin:admin12345@fishare-identitycontext:27017/identity?authSource=identity"
+      FISHARE_IDENTITYSERVICE_DB: mongodb+srv://FishyRoot:Fishy21!@identitycluster-gbgy0.azure.mongodb.net/identity?retryWrites=true&w=majority  #"mongodb://admin:admin12345@fishare-identitycontext:27017/identity?authSource=identity"
       FISHARE_RBMQ_HOSTNAME: fishare-rabbitmq
       FISHARE_RBMQ_USERNAME: user
       FISHARE_RBMQ_PASSWORD: password
@@ -95,8 +95,8 @@ services:
       - .:/fishare-userservice
     environment:
         ASPNETCORE_ENVIRONMENT: Docker
-        FISHARE_USERSERVICE_DB_DOCKER: "Server=fishare-usercontext;Database=FUSDB;User Id=SA;Password=Toor12345;"
-        FISHARE_USERSERVICE_DB_PRODUCTION: "Server=tcp:fishare-user.database.windows.net,1433;Initial Catalog=FuDB;Persist Security Info=False;User ID=FuDB;Password=Fishy21!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;"
+        #FISHARE_USERSERVICE_DB_DOCKER: "Server=fishare-usercontext;Database=FUSDB;User Id=SA;Password=Toor12345;"
+        FISHARE_USERSERVICE_DB: "Server=fishare-usercontext;Database=FUSDB;User Id=SA;Password=Toor12345;" #"Server=tcp:fishare-user.database.windows.net,1433;Initial Catalog=FuDB;Persist Security Info=False;User ID=FuDB;Password=Fishy21!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;"
         FISHARE_RBMQ_HOSTNAME: fishare-rabbitmq
         FISHARE_RBMQ_USERNAME: user
         FISHARE_RBMQ_PASSWORD: password

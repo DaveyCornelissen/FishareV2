@@ -19,31 +19,12 @@ namespace Fishare.UserService.Composition
             switch (stage)
             {
                 case "Development":
-
-                    string dbStage = Environment.GetEnvironmentVariable("DB_ENVIROMENT");
-
                     services.AddDbContext<ApplicationDbContext>(options =>
                             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-
-                    //switch (dbStage)
-                    //{
-                    //    case "LocalDB":
-                    //        services.AddDbContext<ApplicationDbContext>(options =>
-                    //        options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-                    //        break;
-                    //    case "LiveDB":
-                    //        services.AddDbContext<ApplicationDbContext>(options =>
-                    //        options.UseSqlServer(configuration.GetConnectionString("LiveConnection")));
-                    //        break;
-                    //}
                     break;
                 case "Docker":
-                    string _containerString = Environment.GetEnvironmentVariable("FISHARE_USERSERVICE_DB_DOCKER");
+                    string _containerString = Environment.GetEnvironmentVariable("FISHARE_USERSERVICE_DB");
                     services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(_containerString));
-                    break;
-                case "Production":
-                    string _productionString = Environment.GetEnvironmentVariable("FISHARE_USERSERVICE_DB_PRODUCTION");
-                    services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(_productionString));
                     break;
                 default:
                     break;

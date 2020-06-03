@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0658CFD6-8332-4AA0-BCAF-DE1D6AB878B2}"
 	ProjectSection(SolutionItems) = preProject
 		.dockerignore = .dockerignore
+		.gitignore = .gitignore
 		Azure-pipeline.yml = Azure-pipeline.yml
 		Dockerfile = Dockerfile
 	EndProjectSection
