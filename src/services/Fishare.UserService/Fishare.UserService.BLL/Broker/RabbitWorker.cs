@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using System;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -34,6 +35,8 @@ namespace Fishare.UserService.BBL.Broker
                 _provider = serviceScope.ServiceProvider.GetRequiredService<IPooledObjectPolicy<IModel>>();
                 _channel = _provider.Create();
             }
+
+            Console.Write("=== Rabbit Connection Setup Successfull ===");
         }
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
@@ -46,6 +49,7 @@ namespace Fishare.UserService.BBL.Broker
                 //convert bytes to string
                 string payload = Encoding.UTF8.GetString(ea.Body.ToArray());
 
+                Console.Write("=== Rabbit revieved Event ===");
                 // received message  
                 try
                 {
@@ -62,6 +66,7 @@ namespace Fishare.UserService.BBL.Broker
                 {
                     //_logger.LogInformation($"consumer received {content}");
                     _channel.BasicAck(ea.DeliveryTag, false);
+                    Console.Write("=== Rabbit proccessed Event ===");
                 }
             };
 
