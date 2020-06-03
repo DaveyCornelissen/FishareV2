@@ -22,65 +22,65 @@ variables:
   vmImageName: 'ubuntu-latest'
 stages:
 
-# - stage: Code_Quality
-#   displayName: Static Code Quality
-#   jobs:
-#   - job: CodeQuality
-#     displayName: SonarCloud Static Code Quality
-#     pool:
-#       vmImage: $(vmImageName)
-#     steps:            
-#       - task: NodeTool@0
-#         displayName: Install Dependencies
-#         inputs:
-#           versionSpec: 12.x
-#           checkLatest: true
-#       - task: Npm@1
-#         displayName: install project
-#         inputs:
-#           workingDir: $(solutionPath)
-#           command: install
-#       - task: SonarCloudPrepare@1
-#         inputs:
-#           SonarCloud: 'SonarCloud'
-#           organization: 'fishare-angular'
-#           scannerMode: 'CLI'
-#           configMode: 'file'
-#           configFile: '$(solutionPath)/sonar-project.properties'
-#       - task: SonarCloudAnalyze@1
-#       - task: SonarCloudPublish@1
-#         inputs:
-#           pollingTimeoutSec: '300'
-
-# - stage: Build_Publish_Docker
-#   displayName: Build and Publish Docker file
-#   jobs:
-#   - job: ReleaseDocker
-#     displayName: Build and Publish
-#     pool:
-#       vmImage: $(vmImageName)
-#     steps:        
-#       - task: Docker@2
-#         inputs:
-#           containerRegistry: '$(dockerRegistryServiceConnection)'
-#           repository: '$(imageRepository)'
-#           command: 'buildAndPush'
-#           Dockerfile: '$(solutionPath)/Dockerfile'
-#           tags: |
-#             $(tag)
-#             latest
-
-- stage: Release_K8_Cluster
-  displayName: Release to K8 cluster
+- stage: Code_Quality
+  displayName: Static Code Quality
   jobs:
-  - job: Deploy
-    displayName: Deployment
+  - job: CodeQuality
+    displayName: SonarCloud Static Code Quality
     pool:
       vmImage: $(vmImageName)
-    steps:
-    - task: Kubernetes@1
-      displayName: Deploy
-      inputs:
-        kubernetesServiceEndpoint: Kubernetes Connection
-        command: apply
-        arguments: -f $(manifestPath)/deployment.yaml
+    steps:            
+      - task: NodeTool@0
+        displayName: Install Dependencies
+        inputs:
+          versionSpec: 12.x
+          checkLatest: true
+      - task: Npm@1
+        displayName: install project
+        inputs:
+          workingDir: $(solutionPath)
+          command: install
+      - task: SonarCloudPrepare@1
+        inputs:
+          SonarCloud: 'SonarCloud'
+          organization: 'fishare-angular'
+          scannerMode: 'CLI'
+          configMode: 'file'
+          configFile: '$(solutionPath)/sonar-project.properties'
+      - task: SonarCloudAnalyze@1
+      - task: SonarCloudPublish@1
+        inputs:
+          pollingTimeoutSec: '300'
+
+- stage: Build_Publish_Docker
+  displayName: Build and Publish Docker file
+  jobs:
+  - job: ReleaseDocker
+    displayName: Build and Publish
+    pool:
+      vmImage: $(vmImageName)
+    steps:        
+      - task: Docker@2
+        inputs:
+          containerRegistry: '$(dockerRegistryServiceConnection)'
+          repository: '$(imageRepository)'
+          command: 'buildAndPush'
+          Dockerfile: '$(solutionPath)/Dockerfile'
+          tags: |
+            $(tag)
+            latest
+
+# - stage: Release_K8_Cluster
+#   displayName: Release to K8 cluster
+#   jobs:
+#   - job: Deploy
+#     displayName: Deployment
+#     pool:
+#       vmImage: $(vmImageName)
+#     steps:
+#     - task: Kubernetes@1
+#       displayName: Deploy
+#       inputs:
+#         kubernetesServiceEndpoint: Kubernetes Connection
+#         command: apply
+#         arguments: -f $(manifestPath)/deployment.yaml
