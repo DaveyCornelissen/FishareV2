@@ -13,21 +13,37 @@ namespace Fishare.UserService.Composition
         public static void Init(IServiceCollection services, IConfiguration configuration)
         {
             string stage = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-            string containerString = Environment.GetEnvironmentVariable("FISHARE_USERSERVICE_DB");
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             switch (stage)
             {
                 case "Development":
+
+                    string dbStage = Environment.GetEnvironmentVariable("DB_ENVIROMENT");
+
                     services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+                    //switch (dbStage)
+                    //{
+                    //    case "LocalDB":
+                    //        services.AddDbContext<ApplicationDbContext>(options =>
+                    //        options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                    //        break;
+                    //    case "LiveDB":
+                    //        services.AddDbContext<ApplicationDbContext>(options =>
+                    //        options.UseSqlServer(configuration.GetConnectionString("LiveConnection")));
+                    //        break;
+                    //}
                     break;
                 case "Docker":
-                    services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(containerString));
+                    string _containerString = Environment.GetEnvironmentVariable("FISHARE_USERSERVICE_DB_DOCKER");
+                    services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(_containerString));
                     break;
                 case "Production":
-                    services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(containerString));
+                    string _productionString = Environment.GetEnvironmentVariable("FISHARE_USERSERVICE_DB_PRODUCTION");
+                    services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(_productionString));
                     break;
                 default:
                     break;
