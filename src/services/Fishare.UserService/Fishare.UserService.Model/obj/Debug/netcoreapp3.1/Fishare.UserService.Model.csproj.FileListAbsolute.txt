@@ -24,3 +24,4 @@ C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserS
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService.Model\obj\Debug\netcoreapp3.1\Fishare.UserService.Model.AssemblyInfo.cs
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService.Model\obj\Debug\netcoreapp3.1\Fishare.UserService.Model.dll
 C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService.Model\obj\Debug\netcoreapp3.1\Fishare.UserService.Model.pdb
+C:\Users\Davey\Documents\Software projecten\FishareV2\src\services\Fishare.UserService\Fishare.UserService.Model\obj\Debug\netcoreapp3.1\Fishare.UserService.Model.csprojAssemblyReference.cache

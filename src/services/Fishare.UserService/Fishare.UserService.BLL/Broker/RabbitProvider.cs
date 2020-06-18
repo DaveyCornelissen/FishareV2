@@ -36,8 +36,6 @@ namespace Fishare.UserService.BBL.Broker
                 };
 
                 return factory.CreateConnection();
-
-                Console.Write("=== Rabbit Connection Setup Successfull ===");
             }
             catch (Exception e)
             {

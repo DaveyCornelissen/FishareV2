@@ -37,11 +37,11 @@
         }
       ],
       "UpstreamPathTemplate": "/user/{id}",
-      "UpstreamHttpMethod": [ "Get" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "JwtKey",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "Get" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "JwtKey",
+      //  "AllowedScopes": []
+      //}
     }
   ]
 }

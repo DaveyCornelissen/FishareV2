@@ -23,7 +23,7 @@ namespace Fishare.UserService.BLL
             _unitOfWork.Complete();
         }
 
-        public void Delete(int id)
+        public void Delete(string id)
         {
             User user = _unitOfWork.User.Get(id);
             if (user == null) return;
@@ -37,7 +37,7 @@ namespace Fishare.UserService.BLL
             return await _unitOfWork.User.GetAsync(id);
         }
 
-        public void Update(int id, User user)
+        public void Update(string id, User user)
         {
             User oldUser = _unitOfWork.User.Get(id);
             if (oldUser == null) return;

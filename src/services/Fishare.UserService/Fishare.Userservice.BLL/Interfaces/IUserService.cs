@@ -7,9 +7,9 @@ namespace Fishare.UserService.BLL.Interfaces
     {
         void Create(User user);
 
-        void Delete(int id);
+        void Delete(string id);
 
-        void Update(int id, User user);
+        void Update(string id, User user);
 
         Task<User> GetAsync(int id);
     }
