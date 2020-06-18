@@ -27,7 +27,7 @@ namespace Fishare.UserService.Controllers
 
         // PUT: api/User/5
         [HttpPut("{id}")]
-        public void PutUser(int id, User user)
+        public void PutUser(string id, User user)
         {
             _userService.Update(id, user);
         }
