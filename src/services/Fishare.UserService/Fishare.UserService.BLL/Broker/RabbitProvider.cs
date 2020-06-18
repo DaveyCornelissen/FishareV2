@@ -24,6 +24,8 @@ namespace Fishare.UserService.BBL.Broker
         {
             try
             {
+                Console.Write("=== Rabbit Connection Setup... ===");
+
                 var factory = new ConnectionFactory()
                 {
                     HostName = _options.HostName,

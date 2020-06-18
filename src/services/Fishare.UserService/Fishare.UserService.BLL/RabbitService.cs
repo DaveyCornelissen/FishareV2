@@ -30,6 +30,7 @@ namespace Fishare.UserService.Broker
                     _userService.Create(payload); 
                     break;
                 case "deleted":
+                    _userService.Delete(payload.ID);
                     break;
                 default:
                     break;

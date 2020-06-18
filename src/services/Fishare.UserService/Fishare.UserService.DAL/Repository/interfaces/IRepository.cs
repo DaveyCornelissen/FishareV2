@@ -9,7 +9,7 @@ namespace Fishare.Userservice.DAL.Repository
     {
         Task<T> GetAsync(int id);
 
-        T Get(int id);
+        T Get(string id);
 
         void Remove(T entity);
 
