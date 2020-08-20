@@ -33,7 +33,7 @@
     "@nestjs/swagger": "^4.5.3",
     "amqp-connection-manager": "^3.2.0",
     "amqplib": "^0.5.5",
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.11.0",
     "jest-junit": "^10.0.0",
